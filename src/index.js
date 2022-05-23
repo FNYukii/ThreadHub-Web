@@ -2,7 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
+import './styles/index.css'
+
+import Header from './components/Header'
 import Top from './screens/Top'
+import About from './screens/About'
 import NotFound from './screens/NotFound'
 import Thread from './screens/Thread'
 
@@ -10,9 +14,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Header/>
+
       <Routes>
         <Route path='/' element={<Top/>}/>
-        <Route path='/:threadId' element={<Thread/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/threads/:threadId' element={<Thread/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
 

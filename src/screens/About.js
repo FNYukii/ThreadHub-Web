@@ -1,11 +1,11 @@
-function NotFound() {
+function About() {
   return (
     <main>
       <div className="large-container">
-        <h2>NotFound</h2>
+        <h2>About</h2>
       </div>
     </main>
   )
 }
 
-export default NotFound
+export default About

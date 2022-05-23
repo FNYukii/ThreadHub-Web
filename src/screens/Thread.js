@@ -6,8 +6,10 @@ function Thread() {
 
   return (
     <main>
-      <h2>Thread</h2>
-      <p>threadId: {threadId}</p>
+      <div className='large-container'>
+        <h2>Thread</h2>
+        <p>threadId: {threadId}</p>
+      </div>
     </main>
   )
 }

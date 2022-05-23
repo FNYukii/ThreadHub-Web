@@ -1,7 +1,9 @@
 function Top() {
   return (
     <main>
-      <h2>Top</h2>
+      <div className="large-container">
+        <h2>Top</h2>
+      </div>
     </main>
   )
 }
