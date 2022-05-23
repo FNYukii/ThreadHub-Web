@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
+import './styles/index.css'
+
 import Header from './components/Header'
 import Top from './screens/Top'
 import NotFound from './screens/NotFound'

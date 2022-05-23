@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import '../styles/header.css'
 
 function Header() {
   return (
@@ -9,7 +10,7 @@ function Header() {
 
         <ul className='global-nav'>
           <li><NavLink to="/" activeclassname='active' exact='true'>Threads</NavLink></li>
-          <li><NavLink to="/create" activeclassname='active'>New thread</NavLink></li>
+          <li><NavLink to="/" activeclassname='active'>New thread</NavLink></li>
         </ul>
 
       </div>

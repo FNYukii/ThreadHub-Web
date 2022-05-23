@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.large-container {
+  width: 1100px;
+  margin: auto;
+}
+
+@media (max-width:1150px) {
+  .large-container {
+    width: 100%;
+  }
+}
