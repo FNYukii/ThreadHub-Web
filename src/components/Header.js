@@ -9,8 +9,8 @@ function Header() {
         <a href='/' className='logo'>Thread Hub</a>
 
         <ul className='global-nav'>
-          <li><NavLink to="/" activeclassname='active' exact='true'>Threads</NavLink></li>
-          <li><NavLink to="/" activeclassname='active'>New thread</NavLink></li>
+          <li><NavLink to="/" activeclassname='active' exact='true'>Top</NavLink></li>
+          <li><NavLink to="/about" activeclassname='active'>About</NavLink></li>
         </ul>
 
       </div>
