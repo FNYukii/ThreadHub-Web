@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import Top from './screens/Top'
 import NotFound from './screens/NotFound'
+import Thread from './screens/Thread'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -11,6 +12,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Top/>}/>
+        <Route path='/:threadId' element={<Thread/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
 
