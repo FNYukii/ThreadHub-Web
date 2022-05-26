@@ -1,17 +1,10 @@
-import { NavLink } from 'react-router-dom'
-import '../styles/header.css'
+import styles from '../styles/header.module.css'
 
 function Header() {
   return (
-    <header>
-      <div className="large-container">
-
-        <a href='/' className='logo'>Thread Hub</a>
-
-        <ul className='global-nav'>
-          <li><NavLink to="/" activeclassname='active' exact='true'>Top</NavLink></li>
-          <li><NavLink to="/about" activeclassname='active'>About</NavLink></li>
-        </ul>
+    <header className={styles.header}>
+      <div className={styles.largeContainer}>
+        <a href='/' className={styles.logo}>Thread Hub</a>
 
       </div>
     </header>

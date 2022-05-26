@@ -6,7 +6,6 @@ import './styles/index.css'
 
 import Header from './components/Header'
 import Top from './screens/Top'
-import About from './screens/About'
 import NotFound from './screens/NotFound'
 import Thread from './screens/Thread'
 
@@ -18,7 +17,6 @@ root.render(
 
       <Routes>
         <Route path='/' element={<Top/>}/>
-        <Route path='/about' element={<About/>}/>
         <Route path='/threads/:threadId' element={<Thread/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>

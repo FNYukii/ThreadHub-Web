@@ -1,7 +1,9 @@
+import styles from '../styles/top.module.css'
+
 function Top() {
   return (
-    <main>
-      <div className="large-container">
+    <main className={styles.main}>
+      <div>
         <h2>Top</h2>
       </div>
     </main>
