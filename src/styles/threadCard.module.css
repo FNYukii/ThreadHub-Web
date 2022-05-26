@@ -1,6 +1,6 @@
 .cardAnchor {
   text-decoration: none;
-  color: inherit;
+  color: inherit;  
 }
 
 .cardAnchor:hover {
@@ -12,6 +12,7 @@
   height: 150px;
   margin-top: 16px;
   padding: 24px;
+  
   background-color: #fff;
   border-radius: 16px;
 }
