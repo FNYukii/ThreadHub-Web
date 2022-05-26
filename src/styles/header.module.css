@@ -1,10 +1,12 @@
 .header {
   width: 100%;
+  background-color: #fff;
 }
 
 .largeContainer {
   width: 1100px;
-  margin: auto;
+  margin: 0 auto;
+  
   padding: 8px;
 }
 

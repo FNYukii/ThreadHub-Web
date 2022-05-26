@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { collection, query, onSnapshot } from "firebase/firestore";
 import db from '../utilities/Firebase';
 
+import ThreadCard from '../components/ThreadCard'
+
 function Top() {
 
   const [documents, setDocuments] = useState([])
@@ -28,9 +30,15 @@ function Top() {
 
 
   return (
-    <main className={styles.main}>
-      <div>
-        <h2>Top</h2>
+    <main>
+      <div className={styles.largeContainer}>
+        <div className={styles.cardContainer}>
+          {
+            documents.map(document => (
+              <ThreadCard key={document.id} document={document}/>
+            ))
+          }
+        </div>
       </div>
     </main>
   )

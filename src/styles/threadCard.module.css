@@ -1,0 +1,15 @@
+.card {
+  width: 350px;
+  margin-top: 16px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.createdAt {
+  color: #aaa;
+}
