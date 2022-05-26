@@ -18,9 +18,8 @@
 
 .title {
   font-weight: bold;
-
 }
 
-.createdAt {
-  color: #aaa;
+.detail {
+  margin-top: 8px;
 }
