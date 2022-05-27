@@ -1,0 +1,12 @@
+.commentRow {
+  margin: 16px 0;
+}
+
+.dailyUserId {
+  font-weight: bold;
+}
+
+.createdAt {
+  margin-left: 8px;
+  color: #aaa;
+}
