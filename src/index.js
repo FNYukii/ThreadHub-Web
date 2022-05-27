@@ -17,7 +17,7 @@ root.render(
 
       <Routes>
         <Route path='/' element={<Top/>}/>
-        <Route path='/threads/:threadId' element={<Thread/>}/>
+        <Route path='/:threadId' element={<Thread/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
 
