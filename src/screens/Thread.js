@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
 import { collection, query, onSnapshot, where, doc, getDoc } from "firebase/firestore";
 import db from '../utilities/Firebase';
+import CommentRow from '../components/CommentRow';
 
 function Thread() {
 
@@ -49,6 +50,14 @@ function Thread() {
     <main>
       <div className={styles.largeContainer}>
         <h2 className={styles.title}>{threadTitle}</h2>
+
+        <div className={styles.commentContainer}>
+          {
+            comments.map(comment => (
+              <CommentRow key={comment.id} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
+            ))
+          }
+        </div>
       </div>
     </main>
   )
