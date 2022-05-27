@@ -1,0 +1,9 @@
+.largeContainer {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 32px;
+}

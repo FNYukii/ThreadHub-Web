@@ -1,3 +1,5 @@
+import styles from '../styles/thread.module.css'
+
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
 import { collection, query, onSnapshot, where, doc, getDoc } from "firebase/firestore";
@@ -7,7 +9,7 @@ function Thread() {
 
   let { threadId } = useParams()
 
-  const [thread, setThread] = useState()
+  const [threadTitle, setThreadTitle] = useState()
   const [comments, setComments] = useState([])
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function Thread() {
 
     if (docSnap.exists()) {
       console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`);
-      setThread(docSnap)
+      setThreadTitle(docSnap.data().title);
     } else {
       console.log("Thread not found.");
     }
@@ -45,9 +47,8 @@ function Thread() {
 
   return (
     <main>
-      <div className='large-container'>
-        <h2>Thread</h2>
-        <p>threadId: {threadId}</p>
+      <div className={styles.largeContainer}>
+        <h2 className={styles.title}>{threadTitle}</h2>
       </div>
     </main>
   )
