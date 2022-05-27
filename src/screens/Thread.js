@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
-import { collection, query, onSnapshot, where } from "firebase/firestore";
+import { collection, query, onSnapshot, where, doc, getDoc } from "firebase/firestore";
 import db from '../utilities/Firebase';
 
 function Thread() {
@@ -12,7 +12,7 @@ function Thread() {
 
   useEffect(() => {
 
-    // TODO: Get a thread
+    readThread();
 
     // Get comments
     const q = query(collection(db, "comments"), where("threadId", "==", threadId));
@@ -31,6 +31,17 @@ function Thread() {
     };
     
   }, []);
+
+  async function readThread() {
+    const docSnap = await getDoc(doc(db, "threads", threadId));
+
+    if (docSnap.exists()) {
+      console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`);
+      setThread(docSnap)
+    } else {
+      console.log("Thread not found.");
+    }
+  }
 
   return (
     <main>
