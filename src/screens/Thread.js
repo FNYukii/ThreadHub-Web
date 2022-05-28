@@ -44,7 +44,7 @@ function Thread() {
     if (docSnap.exists()) {
       console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`);
       setThreadTitle(docSnap.data().title);
-      setThreadCreatedAt(docSnap.data().createdAt);
+      setThreadCreatedAt(docSnap.data().createdAt.toDate());
       setThreadDailyUserId(docSnap.data().dailyUserId);
       setThreadDetail(docSnap.data().detail);
     } else {
@@ -59,7 +59,7 @@ function Thread() {
 
         <div className={styles.contentContainer}>
 
-          <CommentRow dailyUserId={threadDailyUserId} text={threadDetail}/>
+          <CommentRow dailyUserId={threadDailyUserId} text={threadDetail} createdAt={threadCreatedAt}/>
 
           {
             comments.map(comment => (
