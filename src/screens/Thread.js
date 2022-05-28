@@ -11,6 +11,9 @@ function Thread() {
   let { threadId } = useParams()
 
   const [threadTitle, setThreadTitle] = useState()
+  const [threadCreatedAt, setThreadCreatedAt] = useState()
+  const [threadDailyUserId, setThreadDailyUserId] = useState()
+  const [threadDetail, setThreadDetail] = useState()
   const [comments, setComments] = useState([])
 
   useEffect(() => {
@@ -41,6 +44,9 @@ function Thread() {
     if (docSnap.exists()) {
       console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`);
       setThreadTitle(docSnap.data().title);
+      setThreadCreatedAt(docSnap.data().createdAt);
+      setThreadDailyUserId(docSnap.data().dailyUserId);
+      setThreadDetail(docSnap.data().detail);
     } else {
       console.log("Thread not found.");
     }
@@ -53,7 +59,7 @@ function Thread() {
 
         <div className={styles.contentContainer}>
 
-          {/* TODO: Thread detail */}
+          <CommentRow dailyUserId={threadDailyUserId} text={threadDetail}/>
 
           {
             comments.map(comment => (
