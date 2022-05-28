@@ -51,7 +51,10 @@ function Thread() {
       <div className={styles.largeContainer}>
         <h2 className={styles.title}>{threadTitle}</h2>
 
-        <div className={styles.commentContainer}>
+        <div className={styles.contentContainer}>
+
+          {/* TODO: Thread detail */}
+
           {
             comments.map(comment => (
               <CommentRow key={comment.id} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
