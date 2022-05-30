@@ -11,7 +11,6 @@ function Thread() {
   let { threadId } = useParams()
 
   const [threadTitle, setThreadTitle] = useState()
-  const [threadCreatedAt, setThreadCreatedAt] = useState()
   const [threadDailyUserId, setThreadDailyUserId] = useState()
   const [threadDetail, setThreadDetail] = useState()
   const [comments, setComments] = useState([])
@@ -44,7 +43,6 @@ function Thread() {
     if (docSnap.exists()) {
       console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`);
       setThreadTitle(docSnap.data().title);
-      setThreadCreatedAt(docSnap.data().createdAt.toDate());
       setThreadDailyUserId(docSnap.data().dailyUserId);
       setThreadDetail(docSnap.data().detail);
     } else {
