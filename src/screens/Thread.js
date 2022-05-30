@@ -63,7 +63,7 @@ function Thread() {
 
           {
             comments.map(comment => (
-              <CommentRow key={comment.id} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
+              <CommentRow key={comment.id} order={99} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
             ))
           }
         </div>
