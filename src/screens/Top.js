@@ -31,6 +31,10 @@ function Top() {
   return (
     <main>
       <div className={styles.largeContainer}>
+        <div className={styles.titleBar}>
+          <h2>Threads</h2>
+          <button>Create new thread</button>
+        </div>
         <div className={styles.cardContainer}>
           {
             documents.map(document => (
