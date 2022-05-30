@@ -5,11 +5,12 @@ import { collection, query, onSnapshot } from "firebase/firestore";
 import db from '../utilities/Firebase';
 
 import ThreadCard from '../components/ThreadCard'
+import AddThreadModal from '../components/AddThreadModal'
 
 function Top() {
 
   const [documents, setDocuments] = useState([])
-  const [isShowModal, setIsShowModal] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   useEffect(() => {
     const q = query(collection(db, "threads"));
@@ -34,8 +35,10 @@ function Top() {
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
           <h2>Threads</h2>
-          <button onClick={() => setIsShowModal(true)}>Create new thread</button>
+          <button onClick={() => setIsOpenModal(true)}>Create new thread</button>
         </div>
+
+        <AddThreadModal isOpenModal={isOpenModal}/>
 
         <div className={styles.cardContainer}>
           {
@@ -44,7 +47,7 @@ function Top() {
             ))
           }
         </div>
-        
+      
       </div>
     </main>
   )
