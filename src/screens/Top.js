@@ -27,8 +27,7 @@ function Top() {
     };
     
   }, []);
-
-
+  
   return (
     <main>
       <div className={styles.largeContainer}>
