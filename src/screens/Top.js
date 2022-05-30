@@ -9,6 +9,7 @@ import ThreadCard from '../components/ThreadCard'
 function Top() {
 
   const [documents, setDocuments] = useState([])
+  const [isShowModal, setIsShowModal] = useState(false)
 
   useEffect(() => {
     const q = query(collection(db, "threads"));
@@ -33,7 +34,7 @@ function Top() {
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
           <h2>Threads</h2>
-          <button>Create new thread</button>
+          <button onClick={() => setIsShowModal(true)}>Create new thread</button>
         </div>
         <div className={styles.cardContainer}>
           {
