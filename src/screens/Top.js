@@ -32,13 +32,14 @@ function Top() {
   
   return (
     <main>
+      <AddThreadModal isOpenModal={isOpenModal}/>
+
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
           <h2>Threads</h2>
           <button onClick={() => setIsOpenModal(true)}>Create new thread</button>
         </div>
 
-        <AddThreadModal isOpenModal={isOpenModal}/>
 
         <div className={styles.cardContainer}>
           {
