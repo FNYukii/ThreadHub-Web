@@ -36,6 +36,7 @@ function Top() {
           <h2>Threads</h2>
           <button onClick={() => setIsShowModal(true)}>Create new thread</button>
         </div>
+
         <div className={styles.cardContainer}>
           {
             documents.map(document => (
@@ -43,6 +44,7 @@ function Top() {
             ))
           }
         </div>
+        
       </div>
     </main>
   )
