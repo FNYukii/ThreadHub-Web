@@ -1,7 +1,5 @@
 import styles from '../styles/commentRow.module.css'
 
-import { format } from 'date-fns'
-
 function CommentRow(props) {
   return (
     <div className={styles.commentRow}>
