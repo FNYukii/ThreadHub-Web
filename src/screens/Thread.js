@@ -59,7 +59,7 @@ function Thread() {
 
         <div className={styles.contentContainer}>
 
-          <CommentRow dailyUserId={threadDailyUserId} text={threadDetail} createdAt={threadCreatedAt}/>
+          <CommentRow order={0} dailyUserId={threadDailyUserId} text={threadDetail}/>
 
           {
             comments.map(comment => (
