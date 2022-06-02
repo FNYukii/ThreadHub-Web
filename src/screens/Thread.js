@@ -1,10 +1,12 @@
 import styles from '../styles/thread.module.css'
 
 import { useParams } from 'react-router-dom'
-import React, { useEffect, useState } from 'react';
-import { collection, query, onSnapshot, where, doc, getDoc } from "firebase/firestore";
-import db from '../utilities/Firebase';
-import CommentRow from '../components/CommentRow';
+import React, { useEffect, useState } from 'react'
+import { collection, query, onSnapshot, where, doc, getDoc } from "firebase/firestore"
+import db from '../utilities/Firebase'
+
+import Header from '../components/Header'
+import CommentRow from '../components/CommentRow'
 
 function Thread() {
 
@@ -17,56 +19,61 @@ function Thread() {
 
   useEffect(() => {
 
-    readThread();
+    readThread()
 
     // Get comments
-    const q = query(collection(db, "comments"), where("threadId", "==", threadId));
+    const q = query(collection(db, "comments"), where("threadId", "==", threadId))
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const docs = [];
+      const docs = []
       querySnapshot.forEach((doc) => {
-        docs.push(doc);
-        console.log(`Comment id: ${doc.id}, text: ${doc.data().text}`);
-      });
+        docs.push(doc)
+        console.log(`Comment id: ${doc.id}, text: ${doc.data().text}`)
+      })
 
-      setComments(docs);
-    });
+      setComments(docs)
+    })
 
     return () => {
-      unsubscribe();
-    };
+      unsubscribe()
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   async function readThread() {
-    const docSnap = await getDoc(doc(db, "threads", threadId));
+    const docSnap = await getDoc(doc(db, "threads", threadId))
 
     if (docSnap.exists()) {
-      console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`);
-      setThreadTitle(docSnap.data().title);
-      setThreadDailyUserId(docSnap.data().dailyUserId);
-      setThreadDetail(docSnap.data().detail);
+      console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`)
+      setThreadTitle(docSnap.data().title)
+      setThreadDailyUserId(docSnap.data().dailyUserId)
+      setThreadDetail(docSnap.data().detail)
     } else {
-      console.log("Thread not found.");
+      console.log("Thread not found.")
     }
   }
 
   return (
-    <main>
-      <div className={styles.largeContainer}>
-        <h2 className={styles.title}>{threadTitle}</h2>
+    <div>
+      <Header/>
 
-        <div className={styles.contentContainer}>
+      <main>
+        <div className={styles.largeContainer}>
+          <h2 className={styles.title}>{threadTitle}</h2>
 
-          <CommentRow order={0} dailyUserId={threadDailyUserId} text={threadDetail}/>
+          <div className={styles.contentContainer}>
 
-          {
-            comments.map(comment => (
-              <CommentRow key={comment.id} order={'-'} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
-            ))
-          }
+            <CommentRow order={0} dailyUserId={threadDailyUserId} text={threadDetail}/>
+
+            {
+              comments.map(comment => (
+                <CommentRow key={comment.id} order={'-'} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
+              ))
+            }
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+
+    </div>
   )
 }
 
