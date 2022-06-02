@@ -2,6 +2,8 @@ import styles from '../styles/addThreadModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useState } from 'react'
+import { collection, addDoc } from 'firebase/firestore';
+import db from '../utilities/Firebase'
 
 function AddThreadModal(props) {
 
@@ -17,6 +19,17 @@ function AddThreadModal(props) {
   }
 
   const createThread = () => {
+    if (title === '' || detail === '') {
+      alert('Please enter title and detail.')
+      return
+    }
+
+    addDoc(collection(db, 'threads'), {
+      createdAt: Date(),
+      dailyUserId: 'helloooo',
+      title: title,
+      detail: detail
+    })
     console.log(`title: ${title}, detail: ${detail}`)
   }
 
