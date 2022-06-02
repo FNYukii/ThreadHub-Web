@@ -5,6 +5,23 @@
   padding-top: 32px;
 }
 
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleBar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+  color: #0f83fd;
+}
+
+.titleBar button:hover {
+  opacity: 0.8;
+}
+
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
