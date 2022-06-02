@@ -4,13 +4,18 @@ function AddThreadModal(props) {
   return (
     <div className={props.isOpenModal ? `${styles.modalShadow}` : `${styles.modalShadow} ${styles.invisible}`}>
       <div className={styles.modal}>
+
+        <button className={styles.times}>X</button>
+
         <form>
           <input placeholder="Thread title" required/>
-          <input placeholder="Thread detail" required/>
+          <textarea placeholder='Thread detail' rows='5' required/>
         </form>
 
-        <button>Create</button>
-
+        <div className={styles.submitButtonContainer}>
+          <button>Create a thread</button>
+        </div>
+      
       </div>
     </div>
   )

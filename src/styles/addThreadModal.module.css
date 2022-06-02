@@ -8,3 +8,67 @@
   height: 100vh;
   background-color: #000a;
 }
+
+.modal {
+  margin: 60px auto;
+  padding: 32px;
+  width: 700px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.modal .times {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.modal .times:hover {
+  opacity: 0.8;
+}
+
+.modal input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 0;
+  font-size: medium;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  font-family : inherit;
+}
+
+.modal textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 0;
+  font-size: medium;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  resize: none;
+  font-family : inherit;
+}
+
+.submitButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitButtonContainer button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #0f83fd;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.submitButtonContainer button:hover {
+  opacity: 0.8;
+}
