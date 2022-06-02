@@ -33,7 +33,7 @@ function Top() {
   
   return (
     <div>
-      <AddThreadModal isOpenModal={isOpenModal}/>
+      <AddThreadModal isOpenModal={isOpenModal} onTapTimes={() => setIsOpenModal(false)}/>
       <Header/>
 
       <main>

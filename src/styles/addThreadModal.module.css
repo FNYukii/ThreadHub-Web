@@ -17,14 +17,15 @@
   border-radius: 16px;
 }
 
-.modal .times {
+.modal .timesButton {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  color: #777;
+  font-size: large;
 }
 
-.modal .times:hover {
+.modal .timesButton:hover {
   opacity: 0.8;
 }
 
@@ -71,4 +72,10 @@
 
 .submitButtonContainer button:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+  .modal {
+    width: 90%;
+  }
 }
