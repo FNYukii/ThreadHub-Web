@@ -31,13 +31,21 @@ function AddThreadModal(props) {
       detail: detail
     })
     console.log(`title: ${title}, detail: ${detail}`)
+
+    closeModal()
+  }
+
+  const closeModal = () => {
+    setTitle('')
+    setDetail('')
+    props.close()
   }
 
   return (
     <div className={props.isOpenModal ? `${styles.modalShadow}` : `${styles.modalShadow} ${styles.invisible}`}>
       <div className={styles.modal}>
 
-        <button className={styles.timesButton} onClick={() => {props.onTapTimes()}}>
+        <button className={styles.timesButton} onClick={() => {closeModal()}}>
           <FaTimes/>
         </button>
 
