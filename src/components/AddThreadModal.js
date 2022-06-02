@@ -36,8 +36,6 @@ function AddThreadModal(props) {
   }
 
   const closeModal = () => {
-    setTitle('')
-    setDetail('')
     props.close()
   }
 
