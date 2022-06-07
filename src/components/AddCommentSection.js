@@ -1,3 +1,5 @@
+import styles from '../styles/addCommentSection.module.css'
+
 import React, { useState } from 'react'
 import { collection, addDoc } from 'firebase/firestore';
 import db from '../utilities/Firebase'
@@ -26,13 +28,13 @@ function AddCommentSection(props) {
   }
 
   return (
-    <div>
+    <div className={styles.addCommentSection}>
 
       <form>
-        <textarea placeholder='Comment' rows='5' required onChange={onInputText}/>
+        <textarea placeholder='Comment' rows='2' required onChange={onInputText}/>
       </form>
 
-      <div>
+      <div className={styles.submitButtonContainer}>
         <button onClick={createComment}>Add a comment</button>
       </div>
 

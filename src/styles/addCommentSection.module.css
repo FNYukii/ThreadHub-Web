@@ -1,0 +1,38 @@
+.addCommentSection {
+  margin-top: 48px;
+}
+
+.addCommentSection textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 0;
+  font-size: medium;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  resize: none;
+  font-family : inherit;
+}
+
+
+
+.submitButtonContainer {
+  display: flex;
+  /* justify-content: flex-end; */
+}
+
+.submitButtonContainer button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #0f83fd;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.submitButtonContainer button:hover {
+  opacity: 0.8;
+}
