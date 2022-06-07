@@ -31,6 +31,7 @@ function AddCommentModal(props) {
   }
 
   const closeModal = () => {
+    setText('')
     props.close()
   }
 
@@ -43,7 +44,7 @@ function AddCommentModal(props) {
         </button>
 
         <form>
-          <textarea placeholder='Text' rows='5' required onChange={onInputText}/>
+          <textarea placeholder='Text' rows='5' required onChange={onInputText} value={text}/>
         </form>
 
         <div className={styles.submitButtonContainer}>

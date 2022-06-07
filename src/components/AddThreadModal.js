@@ -50,8 +50,8 @@ function AddThreadModal(props) {
         </button>
 
         <form>
-          <input placeholder="Thread title" required onChange={onInputTitle}/>
-          <textarea placeholder='Thread detail' rows='5' required onChange={onInputDetail}/>
+          <input placeholder="Thread title" required onChange={onInputTitle} value={title}/>
+          <textarea placeholder='Thread detail' rows='5' required onChange={onInputDetail} value={detail}/>
         </form>
 
         <div className={styles.submitButtonContainer}>
