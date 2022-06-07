@@ -7,6 +7,7 @@ import db from '../utilities/Firebase'
 
 import Header from '../components/Header'
 import CommentRow from '../components/CommentRow'
+import AddCommentSection from '../components/AddCommentSection'
 
 function Thread() {
 
@@ -69,6 +70,8 @@ function Thread() {
                 <CommentRow key={comment.id} order={'-'} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
               ))
             }
+
+            <AddCommentSection threadId={threadId}/>
           </div>
         </div>
       </main>
