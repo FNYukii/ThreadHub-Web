@@ -1,7 +1,7 @@
 import styles from '../styles/threadCard.module.css'
 
 import { useEffect, useState } from 'react'
-import { collection, getDocs, where } from "firebase/firestore"
+import { collection, getDocs, where, query } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 
 function ThreadCard(props) {
@@ -9,9 +9,9 @@ function ThreadCard(props) {
   const [commentsCount, setCommentsCount] = useState(0)
 
   async function getCommentsCount() {
-    console.log(`threadId: ${props.document.id}`)
-    const querySnapshot = await getDocs(collection(db, "comments"), where('threadId', '==', props.document.id));
-    setCommentsCount(querySnapshot.docs.length);
+    const q = query(collection(db, 'comments'), where('threadId', '==', props.document.id))
+    const querySnapshot = await getDocs(q)
+    setCommentsCount(querySnapshot.docs.length)
   }
 
   useEffect(() => {

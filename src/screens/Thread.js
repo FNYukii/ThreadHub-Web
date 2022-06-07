@@ -2,7 +2,7 @@ import styles from '../styles/thread.module.css'
 
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import { collection, query, onSnapshot, where, doc, getDoc, orderBy } from "firebase/firestore"
+import { collection, query, onSnapshot, where, doc, getDoc, orderBy } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 
 import Header from '../components/Header'
@@ -25,7 +25,7 @@ function Thread() {
     readThread()
 
     // Get comments
-    const q = query(collection(db, "comments"), where("threadId", "==", threadId), orderBy("createdAt", "asc"))
+    const q = query(collection(db, 'comments'), where('threadId', '==', threadId), orderBy('createdAt', 'asc'))
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const docs = []
       querySnapshot.forEach((doc) => {
@@ -42,7 +42,7 @@ function Thread() {
   }, [])
 
   async function readThread() {
-    const docSnap = await getDoc(doc(db, "threads", threadId))
+    const docSnap = await getDoc(doc(db, 'threads', threadId))
 
     if (docSnap.exists()) {
       console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`)
@@ -50,7 +50,7 @@ function Thread() {
       setThreadDailyUserId(docSnap.data().dailyUserId)
       setThreadDetail(docSnap.data().detail)
     } else {
-      console.log("Thread not found.")
+      console.log('Thread not found.')
     }
   }
 
