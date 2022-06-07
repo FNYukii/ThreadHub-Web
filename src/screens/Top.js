@@ -1,12 +1,13 @@
 import styles from '../styles/top.module.css'
 
 import React, { useEffect, useState } from 'react'
-import { collection, query, onSnapshot } from "firebase/firestore"
+import { collection, query, onSnapshot, orderBy } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 
 import Header from '../components/Header'
 import ThreadCard from '../components/ThreadCard'
 import AddThreadModal from '../components/AddThreadModal'
+import InvisibleCard from '../components/InvisibleCard'
 
 function Top() {
 
@@ -14,12 +15,11 @@ function Top() {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
   useEffect(() => {
-    const q = query(collection(db, "threads"))
+    const q = query(collection(db, 'threads'), orderBy('createdAt', 'desc'))
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const docs = []
       querySnapshot.forEach((doc) => {
         docs.push(doc)
-        console.log(`Thread id: ${doc.id}, title: ${doc.data().title}, createdAt: ${doc.data().createdAt}`)
       })
 
       setDocuments(docs)
@@ -32,7 +32,7 @@ function Top() {
   }, [])
   
   return (
-    <div>
+    <div className={styles.topPage}>
       <AddThreadModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)}/>
       <Header/>
 
@@ -51,6 +51,8 @@ function Top() {
                 <ThreadCard key={document.id} document={document}/>
               ))
             }
+            <InvisibleCard/>
+
           </div>
         
         </div>

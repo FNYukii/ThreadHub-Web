@@ -1,11 +1,30 @@
+.threadPage {
+  background-color: #E1EBF6;
+}
+
 .largeContainer {
   width: 1100px;
   margin: 0 auto;
+  padding-top: 32px;
+  padding-bottom: 100px;
 }
 
-.title {
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleBar h1 {
   text-align: center;
   margin-top: 32px;
+}
+
+.titleBar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+  color: #0f83fd;
 }
 
 .contentContainer {
@@ -14,4 +33,12 @@
   padding: 16px 32px;
   background-color: #fff;
   border-radius: 16px;
+}
+
+@media (max-width: 1100px) {
+  .largeContainer {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }

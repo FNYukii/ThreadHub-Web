@@ -26,7 +26,7 @@ function AddThreadModal(props) {
 
     addDoc(collection(db, 'threads'), {
       createdAt: Date(),
-      dailyUserId: 'helloooo',
+      dailyUserId: 'unknown1234',
       title: title,
       detail: detail
     })
@@ -50,12 +50,12 @@ function AddThreadModal(props) {
         </button>
 
         <form>
-          <input placeholder="Thread title" required onChange={onInputTitle}/>
-          <textarea placeholder='Thread detail' rows='5' required onChange={onInputDetail}/>
+          <input placeholder="Thread title" required onChange={onInputTitle} value={title}/>
+          <textarea placeholder='Thread detail' rows='5' required onChange={onInputDetail} value={detail}/>
         </form>
 
         <div className={styles.submitButtonContainer}>
-          <button onClick={createThread}>Create a thread</button>
+          <button onClick={createThread}>Create</button>
         </div>
       
       </div>
