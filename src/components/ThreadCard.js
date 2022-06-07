@@ -10,8 +10,7 @@ function ThreadCard(props) {
 
   async function getCommentsCount() {
     console.log(`threadId: ${props.document.id}`)
-    // const querySnapshot = await getDocs(collection(db, "comments"), where('threadId', '==', props.document.id));
-    const querySnapshot = await getDocs(collection(db, "comments"), where('threadId', '==', '0MmgTSFzqDJcf6TUO2oU'));
+    const querySnapshot = await getDocs(collection(db, "comments"), where('threadId', '==', props.document.id));
     setCommentsCount(querySnapshot.docs.length);
   }
 
