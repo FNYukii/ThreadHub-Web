@@ -32,7 +32,7 @@ function Top() {
   }, [])
   
   return (
-    <div>
+    <div className={styles.topPage}>
       <AddThreadModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)}/>
       <Header/>
 

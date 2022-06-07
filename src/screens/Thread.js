@@ -2,7 +2,7 @@ import styles from '../styles/thread.module.css'
 
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import { collection, query, onSnapshot, where, doc, getDoc } from "firebase/firestore"
+import { collection, query, onSnapshot, where, doc, getDoc, orderBy } from "firebase/firestore"
 import db from '../utilities/Firebase'
 
 import Header from '../components/Header'
@@ -23,7 +23,7 @@ function Thread() {
     readThread()
 
     // Get comments
-    const q = query(collection(db, "comments"), where("threadId", "==", threadId))
+    const q = query(collection(db, "comments"), where("threadId", "==", threadId), orderBy("createdAt", "asc"))
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const docs = []
       querySnapshot.forEach((doc) => {
