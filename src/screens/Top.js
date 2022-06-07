@@ -7,6 +7,7 @@ import db from '../utilities/Firebase'
 import Header from '../components/Header'
 import ThreadCard from '../components/ThreadCard'
 import AddThreadModal from '../components/AddThreadModal'
+import InvisibleCard from '../components/InvisibleCard'
 
 function Top() {
 
@@ -50,6 +51,8 @@ function Top() {
                 <ThreadCard key={document.id} document={document}/>
               ))
             }
+            <InvisibleCard/>
+
           </div>
         
         </div>
