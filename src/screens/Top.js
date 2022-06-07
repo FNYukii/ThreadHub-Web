@@ -19,7 +19,6 @@ function Top() {
       const docs = []
       querySnapshot.forEach((doc) => {
         docs.push(doc)
-        console.log(`Thread id: ${doc.id}, title: ${doc.data().title}, createdAt: ${doc.data().createdAt}`)
       })
 
       setDocuments(docs)

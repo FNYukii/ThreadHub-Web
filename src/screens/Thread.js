@@ -30,7 +30,6 @@ function Thread() {
       const docs = []
       querySnapshot.forEach((doc) => {
         docs.push(doc)
-        console.log(`Comment id: ${doc.id}, text: ${doc.data().text}`)
       })
 
       setComments(docs)
