@@ -55,7 +55,7 @@ function AddThreadModal(props) {
         </form>
 
         <div className={styles.submitButtonContainer}>
-          <button onClick={createThread}>Create a thread</button>
+          <button onClick={createThread}>Create</button>
         </div>
       
       </div>

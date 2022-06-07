@@ -1,3 +1,5 @@
+import styles from '../styles/addCommentModal.module.css'
+
 import { FaTimes } from 'react-icons/fa'
 import React, { useState } from 'react'
 import { collection, addDoc } from 'firebase/firestore';
@@ -12,7 +14,7 @@ function AddCommentModal(props) {
   }
 
   const createComment = () => {
-    if (title === '') {
+    if (text === '') {
       alert('Please enter text.')
       return
     }
@@ -45,7 +47,7 @@ function AddCommentModal(props) {
         </form>
 
         <div className={styles.submitButtonContainer}>
-          <button onClick={createThread}>Add a comment</button>
+          <button onClick={createComment}>Add</button>
         </div>
       
       </div>

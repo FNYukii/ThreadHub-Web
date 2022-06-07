@@ -7,7 +7,7 @@ import db from '../utilities/Firebase'
 
 import Header from '../components/Header'
 import CommentRow from '../components/CommentRow'
-import AddCommentSection from '../components/AddCommentSection'
+import AddCommentModal from '../components/AddCommentModal'
 
 function Thread() {
 
@@ -17,6 +17,8 @@ function Thread() {
   const [threadDailyUserId, setThreadDailyUserId] = useState()
   const [threadDetail, setThreadDetail] = useState()
   const [comments, setComments] = useState([])
+
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   useEffect(() => {
 
@@ -55,11 +57,15 @@ function Thread() {
 
   return (
     <div className={styles.threadPage}>
+      <AddCommentModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)} threadId={threadId}/>
       <Header/>
 
       <main>
         <div className={styles.largeContainer}>
-          <h2 className={styles.title}>{threadTitle}</h2>
+          <div className={styles.titleBar}>
+            <h2>{threadTitle}</h2>
+            <button onClick={() => setIsOpenModal(true)}>Add new comment</button>
+          </div>
 
           <div className={styles.contentContainer}>
 
@@ -70,8 +76,6 @@ function Thread() {
                 <CommentRow key={comment.id} order={'-'} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
               ))
             }
-
-            <AddCommentSection threadId={threadId}/>
           </div>
         </div>
       </main>
