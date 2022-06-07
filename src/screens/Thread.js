@@ -54,7 +54,7 @@ function Thread() {
   }
 
   return (
-    <div>
+    <div className={styles.threadPage}>
       <Header/>
 
       <main>

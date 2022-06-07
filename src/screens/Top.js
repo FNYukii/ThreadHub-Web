@@ -1,7 +1,7 @@
 import styles from '../styles/top.module.css'
 
 import React, { useEffect, useState } from 'react'
-import { collection, query, onSnapshot } from "firebase/firestore"
+import { collection, query, onSnapshot, orderBy } from "firebase/firestore"
 import db from '../utilities/Firebase'
 
 import Header from '../components/Header'
@@ -14,7 +14,7 @@ function Top() {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
   useEffect(() => {
-    const q = query(collection(db, "threads"))
+    const q = query(collection(db, "threads"), orderBy("createdAt", "desc"))
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const docs = []
       querySnapshot.forEach((doc) => {
