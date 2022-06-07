@@ -26,7 +26,7 @@ function AddThreadModal(props) {
 
     addDoc(collection(db, 'threads'), {
       createdAt: Date(),
-      dailyUserId: 'helloooo',
+      dailyUserId: 'unknown1234',
       title: title,
       detail: detail
     })
