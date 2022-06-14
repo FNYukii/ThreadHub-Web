@@ -42,9 +42,9 @@ function AddThreadModal(props) {
   }
 
   return (
-    <div className={props.isOpenModal ? `${styles.modalShadow}` : `${styles.modalShadow} ${styles.invisible}`}>
+    <div className={props.isOpenModal ? '' : styles.invisible}>
+      <div className={styles.modalShadow} onClick={() => {closeModal()}}></div>
       <div className={styles.modal}>
-
         <button className={styles.timesButton} onClick={() => {closeModal()}}>
           <FaTimes/>
         </button>
@@ -59,6 +59,7 @@ function AddThreadModal(props) {
         </div>
       
       </div>
+
     </div>
   )
 }
