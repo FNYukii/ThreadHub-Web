@@ -54,7 +54,7 @@ function Thread() {
   }
 
   return (
-    <main>
+    <main className={styles.root}>
       <AddCommentModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)} threadId={threadId}/>
 
       <div className={styles.largeContainer}>

@@ -31,7 +31,7 @@ function Top() {
   }, [])
   
   return (
-    <main>
+    <main className={styles.root}>
       <AddThreadModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)}/>
 
       <div className={styles.largeContainer}>
