@@ -19,6 +19,11 @@ function AddCommentModal(props) {
       return
     }
 
+    if (text.length > 2000) {
+      alert('Too many charactors on text.')
+      return
+    }
+
     addDoc(collection(db, 'comments'), {
       threadId: props.threadId,
       createdAt: Date(),
