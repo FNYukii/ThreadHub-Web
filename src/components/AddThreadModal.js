@@ -24,6 +24,16 @@ function AddThreadModal(props) {
       return
     }
 
+    if (title.length > 100) {
+      alert('Too many charactors on title.')
+      return
+    }
+
+    if (detail.length > 100) {
+      alert('Too many charactors on detail.')
+      return
+    }
+
     addDoc(collection(db, 'threads'), {
       createdAt: Date(),
       dailyUserId: 'unknown1234',
