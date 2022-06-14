@@ -14,9 +14,9 @@
   justify-content: space-between;
 }
 
-.titleBar h1 {
-  text-align: center;
-  margin-top: 32px;
+.titleBar h2 {
+  word-wrap: break-word;
+  width: 85%;
 }
 
 .titleBar button {
