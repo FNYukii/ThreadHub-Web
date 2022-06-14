@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { collection, query, onSnapshot, orderBy } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 
-import Header from '../components/Header'
 import ThreadCard from '../components/ThreadCard'
 import AddThreadModal from '../components/AddThreadModal'
 import InvisibleCard from '../components/InvisibleCard'
@@ -32,33 +31,28 @@ function Top() {
   }, [])
   
   return (
-    <div className={styles.topPage}>
+    <main>
       <AddThreadModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)}/>
-      <Header/>
 
-      <main>
-
-        <div className={styles.largeContainer}>
-          <div className={styles.titleBar}>
-            <h2>Threads</h2>
-            <button onClick={() => setIsOpenModal(true)}>Create new thread</button>
-          </div>
-
-
-          <div className={styles.cardContainer}>
-            {
-              documents.map(document => (
-                <ThreadCard key={document.id} document={document}/>
-              ))
-            }
-            <InvisibleCard/>
-
-          </div>
-        
+      <div className={styles.largeContainer}>
+        <div className={styles.titleBar}>
+          <h2>Threads</h2>
+          <button onClick={() => setIsOpenModal(true)}>Create new thread</button>
         </div>
-      </main>
 
-    </div>
+
+        <div className={styles.cardContainer}>
+          {
+            documents.map(document => (
+              <ThreadCard key={document.id} document={document}/>
+            ))
+          }
+          <InvisibleCard/>
+
+        </div>
+      
+      </div>
+    </main>
   )
 }
 

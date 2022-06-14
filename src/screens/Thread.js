@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import { collection, query, onSnapshot, where, doc, getDoc, orderBy } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 
-import Header from '../components/Header'
 import CommentRow from '../components/CommentRow'
 import AddCommentModal from '../components/AddCommentModal'
 
@@ -55,31 +54,28 @@ function Thread() {
   }
 
   return (
-    <div className={styles.threadPage}>
+    <main>
       <AddCommentModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)} threadId={threadId}/>
-      <Header/>
 
-      <main>
-        <div className={styles.largeContainer}>
-          <div className={styles.titleBar}>
-            <h2>{threadTitle}</h2>
-            <button onClick={() => setIsOpenModal(true)}>Add new comment</button>
-          </div>
-
-          <div className={styles.contentContainer}>
-
-            <CommentRow order={0} dailyUserId={threadDailyUserId} text={threadDetail}/>
-
-            {
-              comments.map(comment => (
-                <CommentRow key={comment.id} order={'-'} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
-              ))
-            }
-          </div>
+      <div className={styles.largeContainer}>
+        <div className={styles.titleBar}>
+          <h2>{threadTitle}</h2>
+          <button onClick={() => setIsOpenModal(true)}>Add new comment</button>
         </div>
-      </main>
 
-    </div>
+        <div className={styles.contentContainer}>
+          <CommentRow order={0} dailyUserId={threadDailyUserId} text={threadDetail}/>
+
+          {
+            comments.map(comment => (
+              <CommentRow key={comment.id} order={'-'} dailyUserId={comment.data().dailyUserId} text={comment.data().text}/>
+            ))
+          }
+
+        </div>
+        
+      </div>
+    </main>
   )
 }
 

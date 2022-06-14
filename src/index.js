@@ -7,11 +7,13 @@ import './styles/index.css'
 import Top from './screens/Top'
 import NotFound from './screens/NotFound'
 import Thread from './screens/Thread'
+import Header from './components/Header'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Header/>
       <Routes>
         <Route path='/' element={<Top/>}/>
         <Route path='/:threadId' element={<Thread/>}/>
