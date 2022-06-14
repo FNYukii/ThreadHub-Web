@@ -60,7 +60,7 @@ function Thread() {
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
           <h2>{threadTitle}</h2>
-          <button onClick={() => setIsOpenModal(true)}>Add new comment</button>
+          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>Add new comment</button>
         </div>
 
         <div className={styles.contentContainer}>

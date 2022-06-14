@@ -12,7 +12,7 @@ function Top() {
 
   const [documents, setDocuments] = useState([])
   const [isOpenModal, setIsOpenModal] = useState(false)
-
+  
   useEffect(() => {
     const q = query(collection(db, 'threads'), orderBy('createdAt', 'desc'))
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -37,7 +37,7 @@ function Top() {
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
           <h2>Threads</h2>
-          <button onClick={() => setIsOpenModal(true)}>Create new thread</button>
+          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>Create new thread</button>
         </div>
 
 
