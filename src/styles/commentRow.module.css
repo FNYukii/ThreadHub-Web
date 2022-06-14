@@ -13,5 +13,7 @@
 }
 
 .commentRow p {
+  max-width: 100%;
+  word-wrap: break-word;
   margin-top: 4px;
 }
