@@ -19,7 +19,7 @@ function AddCommentModal(props) {
       return
     }
 
-    if (text.length > 100) {
+    if (text.length > 2000) {
       alert('Too many charactors on text.')
       return
     }
