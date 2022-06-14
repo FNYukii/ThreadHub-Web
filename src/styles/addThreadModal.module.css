@@ -3,16 +3,23 @@
 }
 
 .modalShadow {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   background-color: #000a;
 }
 
 .modal {
-  margin: 60px auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 98vw;
+  width: 600px;
+
   padding: 32px;
-  width: 700px;
   background-color: #fff;
   border-radius: 16px;
 }
