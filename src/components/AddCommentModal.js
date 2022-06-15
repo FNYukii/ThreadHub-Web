@@ -43,6 +43,7 @@ function AddCommentModal(props) {
     addDoc(collection(db, 'comments'), {
       threadId: props.threadId,
       createdAt: Date(),
+      displayName: displayName,
       userId: userId,
       text: text,
     })

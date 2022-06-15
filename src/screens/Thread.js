@@ -70,7 +70,7 @@ function Thread() {
 
           {
             comments.map(comment => (
-              <CommentRow key={comment.id} order={'-'} displayName={threadDisplayName} userId={comment.data().userId} text={comment.data().text}/>
+              <CommentRow key={comment.id} order={'-'} displayName={comment.data().displayName} userId={comment.data().userId} text={comment.data().text}/>
             ))
           }
 
