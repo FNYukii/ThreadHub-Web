@@ -4,6 +4,7 @@ import { FaTimes } from 'react-icons/fa'
 import React, { useState } from 'react'
 import { collection, addDoc } from 'firebase/firestore';
 import db from '../utilities/Firebase'
+import { getAuth } from "firebase/auth"
 
 function AddCommentModal(props) {
 
@@ -24,10 +25,20 @@ function AddCommentModal(props) {
       return
     }
 
+    // Get user
+    const auth = getAuth();
+    const user = auth.currentUser;
+    let dailyUserId = ''
+    if (user) {
+      dailyUserId = user.uid
+    } else {
+      dailyUserId = 'noname'
+    }
+
     addDoc(collection(db, 'comments'), {
       threadId: props.threadId,
       createdAt: Date(),
-      dailyUserId: 'unknown1234',
+      dailyUserId: dailyUserId,
       text: text,
     })
     console.log(`text: ${text}`)

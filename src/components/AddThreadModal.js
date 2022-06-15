@@ -2,8 +2,9 @@ import styles from '../styles/addThreadModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useState } from 'react'
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore'
 import db from '../utilities/Firebase'
+import { getAuth } from "firebase/auth"
 
 function AddThreadModal(props) {
 
@@ -34,9 +35,19 @@ function AddThreadModal(props) {
       return
     }
 
+    // Get user
+    const auth = getAuth();
+    const user = auth.currentUser;
+    let dailyUserId = ''
+    if (user) {
+      dailyUserId = user.uid
+    } else {
+      dailyUserId = 'noname'
+    }
+
     addDoc(collection(db, 'threads'), {
       createdAt: Date(),
-      dailyUserId: 'unknown1234',
+      dailyUserId: dailyUserId,
       title: title,
       detail: detail
     })
