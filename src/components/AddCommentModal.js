@@ -1,7 +1,7 @@
 import styles from '../styles/addCommentModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { collection, addDoc } from 'firebase/firestore';
 import db from '../utilities/Firebase'
 import { getAuth } from "firebase/auth"
@@ -11,7 +11,12 @@ function AddCommentModal(props) {
   const [displayName, setDisplayName] = useState('')
   const [text, setText] = useState('')
 
+  useEffect(() => {
+    setDisplayName(localStorage.getItem('displayName'))
+  }, [])
+
   const onInputDisplayName = (e) => {
+    localStorage.setItem('displayName', displayName)
     setDisplayName(e.target.value)
   }
 
