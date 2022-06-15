@@ -13,6 +13,7 @@ function Thread() {
   let { threadId } = useParams()
 
   const [threadTitle, setThreadTitle] = useState()
+  const [threadDisplayName, setThreadDisplayName] = useState()
   const [threadUserId, setThreadUserId] = useState()
   const [threadDetail, setThreadDetail] = useState()
   const [comments, setComments] = useState([])
@@ -46,6 +47,7 @@ function Thread() {
     if (docSnap.exists()) {
       console.log(`Thread id: ${docSnap.id}, title: ${docSnap.data().title}`)
       setThreadTitle(docSnap.data().title)
+      setThreadDisplayName(docSnap.data().displayName)
       setThreadUserId(docSnap.data().userId)
       setThreadDetail(docSnap.data().detail)
     } else {
@@ -64,11 +66,11 @@ function Thread() {
         </div>
 
         <div className={styles.contentContainer}>
-          <CommentRow order={0} userId={threadUserId} text={threadDetail}/>
+          <CommentRow order={0} displayName={threadDisplayName} userId={threadUserId} text={threadDetail}/>
 
           {
             comments.map(comment => (
-              <CommentRow key={comment.id} order={'-'} userId={comment.data().userId} text={comment.data().text}/>
+              <CommentRow key={comment.id} order={'-'} displayName={threadDisplayName} userId={comment.data().userId} text={comment.data().text}/>
             ))
           }
 

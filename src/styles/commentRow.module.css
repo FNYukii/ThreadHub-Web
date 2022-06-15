@@ -2,9 +2,13 @@
   margin: 16px 0;
 }
 
+.displayName {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
 .userId {
   margin-left: 8px;
-  /* font-weight: bold; */
   color: #777;
 }
 

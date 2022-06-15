@@ -8,7 +8,12 @@ import { getAuth } from "firebase/auth"
 
 function AddCommentModal(props) {
 
+  const [displayName, setDisplayName] = useState('')
   const [text, setText] = useState('')
+
+  const onInputDisplayName = (e) => {
+    setDisplayName(e.target.value)
+  }
 
   const onInputText = (e) => {
     setText(e.target.value)
@@ -61,6 +66,7 @@ function AddCommentModal(props) {
         </button>
 
         <form>
+          <input placeholder="Display name" required onChange={onInputDisplayName} value={displayName}/>
           <textarea placeholder='Text' rows='5' required onChange={onInputText} value={text}/>
         </form>
 
