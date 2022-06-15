@@ -7,7 +7,6 @@ import db from '../utilities/Firebase'
 import ThreadCard from '../components/ThreadCard'
 import AddThreadModal from '../components/AddThreadModal'
 import InvisibleCard from '../components/InvisibleCard'
-
 import progressView from '../images/progressView.svg'
 
 function Top() {
@@ -47,7 +46,6 @@ function Top() {
         {!isLoaded &&
           <img className={styles.progressView} src={progressView} alt=''/>
         }
-
 
         <div className={styles.cardContainer}>
           {
