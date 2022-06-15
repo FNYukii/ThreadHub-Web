@@ -35,6 +35,11 @@
   display: none;
 }
 
+.progressView {
+  display: block;
+  margin: 32px auto;
+}
+
 .contentContainer {
   width: 100%;
   margin-top: 16px;

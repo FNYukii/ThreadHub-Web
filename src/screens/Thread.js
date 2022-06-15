@@ -7,6 +7,7 @@ import db from '../utilities/Firebase'
 
 import CommentRow from '../components/CommentRow'
 import AddCommentModal from '../components/AddCommentModal'
+import progressView from '../images/progressView.svg'
 
 function Thread() {
 
@@ -17,6 +18,7 @@ function Thread() {
   const [threadUserId, setThreadUserId] = useState()
   const [threadDetail, setThreadDetail] = useState()
   const [comments, setComments] = useState([])
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const [isOpenModal, setIsOpenModal] = useState(false)
 
@@ -53,6 +55,8 @@ function Thread() {
     } else {
       console.log('Thread not found.')
     }
+    
+    setIsLoaded(true)
   }
 
   return (
@@ -66,14 +70,21 @@ function Thread() {
         </div>
 
         <div className={styles.contentContainer}>
-          <CommentRow order={0} displayName={threadDisplayName} userId={threadUserId} text={threadDetail}/>
-
-          {
-            comments.map(comment => (
-              <CommentRow key={comment.id} order={'-'} displayName={comment.data().displayName} userId={comment.data().userId} text={comment.data().text}/>
-            ))
+          {!isLoaded &&
+            <img className={styles.progressView} src={progressView} alt=''/>
           }
 
+          {isLoaded &&
+            <div>
+              <CommentRow order={0} displayName={threadDisplayName} userId={threadUserId} text={threadDetail}/>
+
+              {
+                comments.map(comment => (
+                  <CommentRow key={comment.id} order={'-'} displayName={comment.data().displayName} userId={comment.data().userId} text={comment.data().text}/>
+                ))
+              }
+            </div>
+          }
         </div>
         
       </div>
