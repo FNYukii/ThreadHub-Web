@@ -8,9 +8,12 @@ import ThreadCard from '../components/ThreadCard'
 import AddThreadModal from '../components/AddThreadModal'
 import InvisibleCard from '../components/InvisibleCard'
 
+import progressView from '../images/progressView.svg'
+
 function Top() {
 
   const [documents, setDocuments] = useState([])
+  const [isLoaded, setIsLoaded] = useState(false)
   const [isOpenModal, setIsOpenModal] = useState(false)
   
   useEffect(() => {
@@ -22,6 +25,7 @@ function Top() {
       })
 
       setDocuments(docs)
+      setIsLoaded(true)
     })
 
     return () => {
@@ -39,6 +43,10 @@ function Top() {
           <h2>Threads</h2>
           <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>Create new thread</button>
         </div>
+
+        {!isLoaded &&
+          <img className={styles.progressView} src={progressView} alt=''/>
+        }
 
 
         <div className={styles.cardContainer}>

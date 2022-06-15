@@ -31,6 +31,11 @@
   display: none;
 }
 
+.progressView {
+  display: block;
+  margin: 100px auto;
+}
+
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
