@@ -4,10 +4,16 @@ import { FaTimes } from 'react-icons/fa'
 import React, { useState } from 'react'
 import { collection, addDoc } from 'firebase/firestore';
 import db from '../utilities/Firebase'
+import { getAuth } from "firebase/auth"
 
 function AddCommentModal(props) {
 
+  const [displayName, setDisplayName] = useState('')
   const [text, setText] = useState('')
+
+  const onInputDisplayName = (e) => {
+    setDisplayName(e.target.value)
+  }
 
   const onInputText = (e) => {
     setText(e.target.value)
@@ -24,10 +30,20 @@ function AddCommentModal(props) {
       return
     }
 
+    // Get user
+    const auth = getAuth();
+    const user = auth.currentUser;
+    let userId = ''
+    if (user) {
+      userId = user.uid
+    } else {
+      userId = 'noname'
+    }
+
     addDoc(collection(db, 'comments'), {
       threadId: props.threadId,
       createdAt: Date(),
-      dailyUserId: 'unknown1234',
+      userId: userId,
       text: text,
     })
     console.log(`text: ${text}`)
@@ -50,6 +66,7 @@ function AddCommentModal(props) {
         </button>
 
         <form>
+          <input placeholder="Display name" required onChange={onInputDisplayName} value={displayName}/>
           <textarea placeholder='Text' rows='5' required onChange={onInputText} value={text}/>
         </form>
 

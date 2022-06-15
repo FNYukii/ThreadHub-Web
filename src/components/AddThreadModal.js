@@ -2,13 +2,19 @@ import styles from '../styles/addThreadModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useState } from 'react'
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore'
 import db from '../utilities/Firebase'
+import { getAuth } from "firebase/auth"
 
 function AddThreadModal(props) {
 
+  const [displayName, setDisplayName] = useState('')
   const [title, setTitle] = useState('')
   const [detail, setDetail] = useState('')
+
+  const onInputDisplayName = (e) => {
+    setDisplayName(e.target.value)
+  }
 
   const onInputTitle = (e) => {
     setTitle(e.target.value)
@@ -34,9 +40,20 @@ function AddThreadModal(props) {
       return
     }
 
+    // Get user
+    const auth = getAuth();
+    const user = auth.currentUser;
+    let userId = ''
+    if (user) {
+      userId = user.uid
+    } else {
+      userId = 'noname'
+    }
+
     addDoc(collection(db, 'threads'), {
       createdAt: Date(),
-      dailyUserId: 'unknown1234',
+      userId: userId,
+      displayName: displayName,
       title: title,
       detail: detail
     })
@@ -60,6 +77,7 @@ function AddThreadModal(props) {
         </button>
 
         <form>
+          <input placeholder="Display name" required onChange={onInputDisplayName} value={displayName}/>
           <input placeholder="Thread title" required onChange={onInputTitle} value={title}/>
           <textarea placeholder='Thread detail' rows='5' required onChange={onInputDetail} value={detail}/>
         </form>
