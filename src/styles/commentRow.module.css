@@ -2,9 +2,10 @@
   margin: 16px 0;
 }
 
-.dailyUserId {
+.userId {
   margin-left: 8px;
-  font-weight: bold;
+  /* font-weight: bold; */
+  color: #777;
 }
 
 .createdAt {

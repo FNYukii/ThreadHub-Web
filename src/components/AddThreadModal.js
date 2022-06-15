@@ -38,16 +38,16 @@ function AddThreadModal(props) {
     // Get user
     const auth = getAuth();
     const user = auth.currentUser;
-    let dailyUserId = ''
+    let userId = ''
     if (user) {
-      dailyUserId = user.uid
+      userId = user.uid
     } else {
-      dailyUserId = 'noname'
+      userId = 'noname'
     }
 
     addDoc(collection(db, 'threads'), {
       createdAt: Date(),
-      dailyUserId: dailyUserId,
+      userId: userId,
       title: title,
       detail: detail
     })
