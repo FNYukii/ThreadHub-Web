@@ -6,7 +6,11 @@ function PopupMenu() {
 
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 
-  const deleteComment = () => {
+  const onClickDelete = () => {
+    setIsOpenMenu(false)
+  }
+
+  const onClickReport = () => {
     setIsOpenMenu(false)
   }
 
@@ -18,8 +22,8 @@ function PopupMenu() {
 
       {isOpenMenu &&
         <div className={styles.menu}>
-          <button onClick={deleteComment}>Delete</button>
-          <button>Report</button>
+          <button onClick={onClickDelete}>Delete</button>
+          <button onClick={onClickReport}>Report</button>
         </div>
       }
     </div>
