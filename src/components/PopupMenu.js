@@ -19,10 +19,12 @@ function PopupMenu(props) {
 
   const onClickDeleteThread = () => {
     setIsOpenMenu(false)
+    // TODO: Delete my thread
   }
 
   const onClickDeleteComment = () => {
     setIsOpenMenu(false)
+    // TODO: Delete my comment
   }
 
   const onClickReport = () => {
