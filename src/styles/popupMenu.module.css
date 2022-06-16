@@ -16,8 +16,8 @@
 
 .menu {
   position: absolute;
-  top: 10;
-  left: 0;
+  top: 30px;
+  right: 0;
   background-color: #fff;
   padding: 0 16px 16px;
   box-shadow: 0px 0px 4px #ccc;
@@ -25,6 +25,7 @@
 }
 
 .menu button {
+  white-space: nowrap;
   margin-top: 16px;
   background-color: transparent;
   border: none;
