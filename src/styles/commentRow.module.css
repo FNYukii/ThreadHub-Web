@@ -2,6 +2,14 @@
   margin: 16px 0;
 }
 
+.nameBar {
+  white-space: nowrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .displayName {
   font-weight: bold;
 }
