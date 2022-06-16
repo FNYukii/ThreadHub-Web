@@ -76,11 +76,11 @@ function Thread() {
 
           {isLoaded &&
             <div>
-              <CommentRow order={0} displayName={threadDisplayName} userId={threadUserId} text={threadDetail}/>
+              <CommentRow displayName={threadDisplayName} userId={threadUserId} text={threadDetail}/>
 
               {
                 comments.map(comment => (
-                  <CommentRow key={comment.id} order={'-'} displayName={comment.data().displayName} userId={comment.data().userId} text={comment.data().text}/>
+                  <CommentRow key={comment.id} displayName={comment.data().displayName} userId={comment.data().userId} text={comment.data().text}/>
                 ))
               }
             </div>
