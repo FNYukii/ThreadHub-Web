@@ -13,7 +13,7 @@ function CommentRow(props) {
           <span className={styles.createdAt}>{dayjs(props.createdAt).format('YYYY/MM/DD HH:mm')}</span>
         </div>
 
-        <PopupMenu/>
+        <PopupMenu isThread={props.isThread}/>
       </div>
       <p>{props.text}</p>
     </div>

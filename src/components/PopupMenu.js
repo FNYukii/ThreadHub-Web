@@ -2,11 +2,15 @@ import styles from '../styles/popupMenu.module.css'
 import { useState } from 'react'
 import { FaEllipsisH } from 'react-icons/fa'
 
-function PopupMenu() {
+function PopupMenu(props) {
 
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 
-  const onClickDelete = () => {
+  const onClickDeleteThread = () => {
+    setIsOpenMenu(false)
+  }
+
+  const onClickDeleteComment = () => {
     setIsOpenMenu(false)
   }
 
@@ -22,7 +26,13 @@ function PopupMenu() {
 
       {isOpenMenu &&
         <div className={styles.menu}>
-          <button onClick={onClickDelete}>Delete</button>
+          {props.isThread &&
+            <button onClick={onClickDeleteThread}>Delete this thread</button>
+          }
+          
+          {!props.isThread &&
+            <button onClick={onClickDeleteComment}>Delete this comment</button>
+          }
           <button onClick={onClickReport}>Report</button>
         </div>
       }

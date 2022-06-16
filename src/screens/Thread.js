@@ -78,7 +78,7 @@ function Thread() {
 
           {isLoaded &&
             <div>
-              <CommentRow displayName={threadDisplayName} userId={threadUserId} createdAt={threadCreatedAt} text={threadDetail}/>
+              <CommentRow isThread={true} displayName={threadDisplayName} userId={threadUserId} createdAt={threadCreatedAt} text={threadDetail}/>
 
               {
                 comments.map(comment => (
