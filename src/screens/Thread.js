@@ -16,6 +16,7 @@ function Thread() {
   const [threadTitle, setThreadTitle] = useState('')
   const [threadDisplayName, setThreadDisplayName] = useState('')
   const [threadUserId, setThreadUserId] = useState('')
+  const [threadCreatedAt, setThreadCreatedAt] = useState()
   const [threadDetail, setThreadDetail] = useState('')
   const [comments, setComments] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
@@ -51,6 +52,7 @@ function Thread() {
       setThreadTitle(docSnap.data().title)
       setThreadDisplayName(docSnap.data().displayName)
       setThreadUserId(docSnap.data().userId)
+      setThreadCreatedAt(new Date(docSnap.data().createdAt.toDate()))
       setThreadDetail(docSnap.data().detail)
     } else {
       console.log('Thread not found.')
@@ -76,11 +78,11 @@ function Thread() {
 
           {isLoaded &&
             <div>
-              <CommentRow displayName={threadDisplayName} userId={threadUserId} text={threadDetail}/>
+              <CommentRow displayName={threadDisplayName} userId={threadUserId} createdAt={threadCreatedAt} text={threadDetail}/>
 
               {
                 comments.map(comment => (
-                  <CommentRow key={comment.id} displayName={comment.data().displayName} userId={comment.data().userId} text={comment.data().text}/>
+                  <CommentRow key={comment.id} displayName={comment.data().displayName} userId={comment.data().userId} createdAt={new Date(comment.data({serverTimestamps:"estimate"}).createdAt.toDate())} text={comment.data().text}/>
                 ))
               }
             </div>

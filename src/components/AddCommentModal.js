@@ -2,7 +2,7 @@ import styles from '../styles/addCommentModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import db from '../utilities/Firebase'
 import { getAuth } from "firebase/auth"
 
@@ -16,7 +16,6 @@ function AddCommentModal(props) {
   }, [])
 
   const onInputDisplayName = (e) => {
-    localStorage.setItem('displayName', displayName)
     setDisplayName(e.target.value)
   }
 
@@ -35,6 +34,8 @@ function AddCommentModal(props) {
       return
     }
 
+    localStorage.setItem('displayName', displayName)
+
     // Get user
     const auth = getAuth();
     const user = auth.currentUser;
@@ -46,8 +47,8 @@ function AddCommentModal(props) {
     }
 
     addDoc(collection(db, 'comments'), {
+      createdAt: serverTimestamp(),
       threadId: props.threadId,
-      createdAt: Date(),
       displayName: displayName,
       userId: userId,
       text: text,

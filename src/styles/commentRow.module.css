@@ -1,13 +1,16 @@
 .commentRow {
-  margin: 16px 0;
+  margin: 16px 0 24px;
 }
 
 .nameBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.names {
   white-space: nowrap;
-  word-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .displayName {
@@ -21,7 +24,15 @@
 
 .createdAt {
   margin-left: 8px;
+  color: #777;
+}
+
+.menuButton {
+  background-color: transparent;  
+  border: none;
   color: #aaa;
+  padding: 4px;
+  cursor: pointer;
 }
 
 .commentRow p {

@@ -2,7 +2,7 @@ import styles from '../styles/addThreadModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 import { getAuth } from "firebase/auth"
 
@@ -17,7 +17,6 @@ function AddThreadModal(props) {
   }, [])
 
   const onInputDisplayName = (e) => {
-    localStorage.setItem('displayName', displayName)
     setDisplayName(e.target.value)
   }
 
@@ -45,6 +44,8 @@ function AddThreadModal(props) {
       return
     }
 
+    localStorage.setItem('displayName', displayName)
+
     // Get user
     const auth = getAuth();
     const user = auth.currentUser;
@@ -56,7 +57,7 @@ function AddThreadModal(props) {
     }
 
     addDoc(collection(db, 'threads'), {
-      createdAt: Date(),
+      createdAt: serverTimestamp(),
       userId: userId,
       displayName: displayName,
       title: title,
