@@ -1,8 +1,9 @@
 import styles from '../styles/commentRow.module.css'
 import dayjs from 'dayjs'
-import { FaEllipsisH } from 'react-icons/fa'
+import PopupMenu from './PopupMenu'
 
 function CommentRow(props) {
+
   return (
     <div className={styles.commentRow}>
       <div className={styles.nameBar}>
@@ -11,9 +12,8 @@ function CommentRow(props) {
           <span className={styles.userId}>@{props.userId}</span>
           <span className={styles.createdAt}>{dayjs(props.createdAt).format('YYYY/MM/DD HH:mm')}</span>
         </div>
-        <button className={styles.menuButton}>
-          <FaEllipsisH/>
-        </button>
+
+        <PopupMenu isThread={props.isThread} userId={props.userId}/>
       </div>
       <p>{props.text}</p>
     </div>

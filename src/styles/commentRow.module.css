@@ -27,18 +27,6 @@
   color: #777;
 }
 
-.menuButton {
-  background-color: transparent;  
-  border: none;
-  color: #aaa;
-  padding: 4px;
-  cursor: pointer;
-}
-
-.menuButton:hover {
-  opacity: 0.8;
-}
-
 .commentRow p {
   max-width: 100%;
   word-wrap: break-word;

@@ -1,0 +1,38 @@
+.root {
+  position: relative;
+}
+
+.menuButton {
+  background-color: transparent;  
+  border: none;
+  color: #aaa;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  opacity: 0.8;
+}
+
+.menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  padding: 0 16px 16px;
+  box-shadow: 0px 0px 4px #ccc;
+  z-index: 1;
+}
+
+.menu button {
+  white-space: nowrap;
+  margin-top: 16px;
+  background-color: transparent;
+  border: none;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  opacity: 0.7;
+}
