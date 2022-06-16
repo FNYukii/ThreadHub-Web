@@ -13,10 +13,10 @@ function Thread() {
 
   let { threadId } = useParams()
 
-  const [threadTitle, setThreadTitle] = useState()
-  const [threadDisplayName, setThreadDisplayName] = useState()
-  const [threadUserId, setThreadUserId] = useState()
-  const [threadDetail, setThreadDetail] = useState()
+  const [threadTitle, setThreadTitle] = useState('')
+  const [threadDisplayName, setThreadDisplayName] = useState('')
+  const [threadUserId, setThreadUserId] = useState('')
+  const [threadDetail, setThreadDetail] = useState('')
   const [comments, setComments] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
 
