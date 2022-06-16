@@ -6,7 +6,7 @@ function CommentRow(props) {
   return (
     <div className={styles.commentRow}>
       <div className={styles.nameBar}>
-        <div>
+        <div className={styles.names}>
           <span className={styles.displayName}>{props.displayName}</span>
           <span className={styles.userId}>@{props.userId}</span>
           <span className={styles.createdAt}>{dayjs(props.createdAt).format('YYYY/MM/DD HH:mm')}</span>

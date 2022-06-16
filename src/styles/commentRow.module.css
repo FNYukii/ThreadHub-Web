@@ -3,14 +3,14 @@
 }
 
 .nameBar {
-  white-space: nowrap;
-  word-wrap: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
   display: flex;
   justify-content: space-between;
+}
+
+.names {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .displayName {
