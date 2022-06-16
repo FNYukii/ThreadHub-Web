@@ -17,7 +17,6 @@ function AddThreadModal(props) {
   }, [])
 
   const onInputDisplayName = (e) => {
-    localStorage.setItem('displayName', displayName)
     setDisplayName(e.target.value)
   }
 
@@ -44,6 +43,8 @@ function AddThreadModal(props) {
       alert('Too many charactors on detail.')
       return
     }
+
+    localStorage.setItem('displayName', displayName)
 
     // Get user
     const auth = getAuth();

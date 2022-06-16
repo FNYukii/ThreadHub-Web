@@ -16,7 +16,6 @@ function AddCommentModal(props) {
   }, [])
 
   const onInputDisplayName = (e) => {
-    localStorage.setItem('displayName', displayName)
     setDisplayName(e.target.value)
   }
 
@@ -34,6 +33,8 @@ function AddCommentModal(props) {
       alert('Too many charactors on text.')
       return
     }
+
+    localStorage.setItem('displayName', displayName)
 
     // Get user
     const auth = getAuth();
