@@ -2,7 +2,7 @@ import styles from '../styles/addCommentModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useState, useEffect } from 'react'
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import db from '../utilities/Firebase'
 import { getAuth } from "firebase/auth"
 
@@ -47,8 +47,8 @@ function AddCommentModal(props) {
     }
 
     addDoc(collection(db, 'comments'), {
+      createdAt: serverTimestamp(),
       threadId: props.threadId,
-      createdAt: Date(),
       displayName: displayName,
       userId: userId,
       text: text,
