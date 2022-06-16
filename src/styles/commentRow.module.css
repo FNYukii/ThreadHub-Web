@@ -35,6 +35,10 @@
   cursor: pointer;
 }
 
+.menuButton:hover {
+  opacity: 0.8;
+}
+
 .commentRow p {
   max-width: 100%;
   word-wrap: break-word;
