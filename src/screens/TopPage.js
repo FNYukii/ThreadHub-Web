@@ -47,6 +47,10 @@ function TopPage() {
           <img className={styles.progressView} src={progressView} alt=''/>
         }
 
+        {isLoaded && documents.length === 0 &&
+          <p className={styles.noContentText}>まだスレッドはありません。</p>
+        }
+
         <div className={styles.cardContainer}>
           {
             documents.map(document => (
