@@ -26,7 +26,7 @@ root.render(
       <Header/>
       <Routes>
         <Route path='/' element={<Top/>}/>
-        <Route path='/:threadId' element={<ThreadPage/>}/>
+        <Route path='/threads/:threadId' element={<ThreadPage/>}/>
         <Route path='*' element={<NotFoundPage/>}/>
       </Routes>
 
