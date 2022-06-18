@@ -10,7 +10,7 @@ function AddThreadModal(props) {
 
   const [displayName, setDisplayName] = useState('')
   const [title, setTitle] = useState('')
-  const [detail, setDetail] = useState('')
+  const [text, setText] = useState('')
 
   useEffect(() => {
     setDisplayName(localStorage.getItem('displayName'))
@@ -24,12 +24,12 @@ function AddThreadModal(props) {
     setTitle(e.target.value)
   }
 
-  const onInputDetail = (e) => {
-    setDetail(e.target.value)
+  const onInputText = (e) => {
+    setText(e.target.value)
   }
 
-  const createThread = () => {
-    if (title === '' || detail === '') {
+  const createThread = async() => {
+    if (title === '' || text === '') {
       alert('Please enter title and detail.')
       return
     }
@@ -39,7 +39,7 @@ function AddThreadModal(props) {
       return
     }
 
-    if (detail.length > 2000) {
+    if (text.length > 2000) {
       alert('Too many charactors on detail.')
       return
     }
@@ -56,21 +56,28 @@ function AddThreadModal(props) {
       userId = 'noname'
     }
 
-    addDoc(collection(db, 'threads'), {
+    const docRef = await addDoc(collection(db, 'threads'), {
       createdAt: serverTimestamp(),
       userId: userId,
-      displayName: displayName,
       title: title,
-      detail: detail
     })
-    console.log(`title: ${title}, detail: ${detail}`)
+    console.log("Document written with ID: ", docRef.id)
+    const threadId = docRef.id
+
+    addDoc(collection(db, "comments"), {
+      createdAt: serverTimestamp(),
+      threadId: threadId,
+      userId: userId,
+      displayName: displayName,
+      text: text
+    })
 
     closeModal()
   }
 
   const closeModal = () => {
     setTitle('')
-    setDetail('')
+    setText('')
     props.close()
   }
 
@@ -83,9 +90,10 @@ function AddThreadModal(props) {
         </button>
 
         <form>
-          <input placeholder="ニックネーム" required onChange={onInputDisplayName} value={displayName}/>
           <input placeholder="タイトル" required onChange={onInputTitle} value={title}/>
-          <textarea placeholder='説明' rows='5' required onChange={onInputDetail} value={detail}/>
+
+          <input placeholder="ニックネーム" required onChange={onInputDisplayName} value={displayName}/>
+          <textarea placeholder='コメント' rows='5' required onChange={onInputText} value={text}/>
         </form>
 
         <div className={styles.submitButtonContainer}>
