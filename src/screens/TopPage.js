@@ -9,7 +9,7 @@ import AddThreadModal from '../components/AddThreadModal'
 import InvisibleCard from '../components/InvisibleCard'
 import progressView from '../images/progressView.svg'
 
-function Top() {
+function TopPage() {
 
   const [documents, setDocuments] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
@@ -62,4 +62,4 @@ function Top() {
   )
 }
 
-export default Top
+export default TopPage

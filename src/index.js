@@ -5,9 +5,9 @@ import { getAuth, signInAnonymously } from "firebase/auth";
 
 import './styles/index.css'
 
-import Top from './screens/Top'
-import NotFound from './screens/NotFound'
-import Thread from './screens/Thread'
+import Top from './screens/TopPage'
+import NotFoundPage from './screens/NotFoundPage'
+import ThreadPage from './screens/ThreadPage'
 import Header from './components/Header'
 
 const auth = getAuth();
@@ -26,8 +26,8 @@ root.render(
       <Header/>
       <Routes>
         <Route path='/' element={<Top/>}/>
-        <Route path='/:threadId' element={<Thread/>}/>
-        <Route path='*' element={<NotFound/>}/>
+        <Route path='/:threadId' element={<ThreadPage/>}/>
+        <Route path='*' element={<NotFoundPage/>}/>
       </Routes>
 
     </BrowserRouter>

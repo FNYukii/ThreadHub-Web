@@ -1,4 +1,4 @@
-function NotFound() {
+function NotFoundPage() {
   return (
     <main>
       <div className="large-container">
@@ -8,4 +8,4 @@ function NotFound() {
   )
 }
 
-export default NotFound
+export default NotFoundPage

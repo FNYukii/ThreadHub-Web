@@ -9,7 +9,7 @@ import CommentRow from '../components/CommentRow'
 import AddCommentModal from '../components/AddCommentModal'
 import progressView from '../images/progressView.svg'
 
-function Thread() {
+function ThreadPage() {
 
   let { threadId } = useParams()
 
@@ -94,4 +94,4 @@ function Thread() {
   )
 }
 
-export default Thread
+export default ThreadPage
