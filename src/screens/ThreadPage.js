@@ -1,4 +1,4 @@
-import styles from '../styles/thread.module.css'
+import styles from '../styles/threadPage.module.css'
 
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'

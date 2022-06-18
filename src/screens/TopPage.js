@@ -1,4 +1,4 @@
-import styles from '../styles/top.module.css'
+import styles from '../styles/topPage.module.css'
 
 import React, { useEffect, useState } from 'react'
 import { collection, query, onSnapshot, orderBy } from 'firebase/firestore'
