@@ -23,6 +23,8 @@ function ThreadPage() {
 
   const [isOpenModal, setIsOpenModal] = useState(false)
 
+  document.title = threadTitle
+
   useEffect(() => {
 
     readThread()
@@ -57,7 +59,6 @@ function ThreadPage() {
     } else {
       console.log('Thread not found.')
     }
-    
     setIsLoaded(true)
   }
 
