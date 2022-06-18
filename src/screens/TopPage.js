@@ -1,4 +1,4 @@
-import styles from '../styles/top.module.css'
+import styles from '../styles/topPage.module.css'
 
 import React, { useEffect, useState } from 'react'
 import { collection, query, onSnapshot, orderBy } from 'firebase/firestore'
@@ -9,7 +9,7 @@ import AddThreadModal from '../components/AddThreadModal'
 import InvisibleCard from '../components/InvisibleCard'
 import progressView from '../images/progressView.svg'
 
-function Top() {
+function TopPage() {
 
   const [documents, setDocuments] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
@@ -39,12 +39,16 @@ function Top() {
 
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
-          <h2>Threads</h2>
-          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>Create new thread</button>
+          <h2>スレッド</h2>
+          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>新規スレッド</button>
         </div>
 
         {!isLoaded &&
           <img className={styles.progressView} src={progressView} alt=''/>
+        }
+
+        {isLoaded && documents.length === 0 &&
+          <p className={styles.noContentText}>まだスレッドはありません。</p>
         }
 
         <div className={styles.cardContainer}>
@@ -62,4 +66,4 @@ function Top() {
   )
 }
 
-export default Top
+export default TopPage

@@ -83,13 +83,13 @@ function AddThreadModal(props) {
         </button>
 
         <form>
-          <input placeholder="Display name" required onChange={onInputDisplayName} value={displayName}/>
-          <input placeholder="Thread title" required onChange={onInputTitle} value={title}/>
-          <textarea placeholder='Thread detail' rows='5' required onChange={onInputDetail} value={detail}/>
+          <input placeholder="ニックネーム" required onChange={onInputDisplayName} value={displayName}/>
+          <input placeholder="タイトル" required onChange={onInputTitle} value={title}/>
+          <textarea placeholder='説明' rows='5' required onChange={onInputDetail} value={detail}/>
         </form>
 
         <div className={styles.submitButtonContainer}>
-          <button onClick={createThread}>Create</button>
+          <button onClick={createThread}>作成</button>
         </div>
       
       </div>

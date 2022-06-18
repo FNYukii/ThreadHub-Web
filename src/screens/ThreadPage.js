@@ -1,4 +1,4 @@
-import styles from '../styles/thread.module.css'
+import styles from '../styles/threadPage.module.css'
 
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
@@ -9,7 +9,7 @@ import CommentRow from '../components/CommentRow'
 import AddCommentModal from '../components/AddCommentModal'
 import progressView from '../images/progressView.svg'
 
-function Thread() {
+function ThreadPage() {
 
   let { threadId } = useParams()
 
@@ -68,7 +68,7 @@ function Thread() {
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
           <h2>{threadTitle}</h2>
-          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>Add new comment</button>
+          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>新規コメント</button>
         </div>
 
         <div className={styles.contentContainer}>
@@ -94,4 +94,4 @@ function Thread() {
   )
 }
 
-export default Thread
+export default ThreadPage

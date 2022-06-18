@@ -73,12 +73,12 @@ function AddCommentModal(props) {
         </button>
 
         <form>
-          <input placeholder="Display name" required onChange={onInputDisplayName} value={displayName}/>
-          <textarea placeholder='Text' rows='5' required onChange={onInputText} value={text}/>
+          <input placeholder="ニックネーム" required onChange={onInputDisplayName} value={displayName}/>
+          <textarea placeholder='コメント' rows='5' required onChange={onInputText} value={text}/>
         </form>
 
         <div className={styles.submitButtonContainer}>
-          <button onClick={createComment}>Add</button>
+          <button onClick={createComment}>投稿</button>
         </div>
       
       </div>

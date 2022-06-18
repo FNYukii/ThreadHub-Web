@@ -36,6 +36,12 @@
   margin: 64px auto;
 }
 
+.noContentText {
+  margin-top: 64px;
+  color: #777;
+  text-align: center;
+}
+
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
