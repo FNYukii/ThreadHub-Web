@@ -68,7 +68,7 @@ function ThreadPage() {
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
           <h2>{threadTitle}</h2>
-          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>Add new comment</button>
+          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>新規コメント</button>
         </div>
 
         <div className={styles.contentContainer}>

@@ -24,7 +24,7 @@ function ThreadCard(props) {
       <div className={styles.card}>
         <p className={styles.title}>{props.document.data().title}</p>
         <p className={styles.detail}>{props.document.data().detail}</p>
-        <p className={styles.commentsCount}>{`${commentsCount}`} comments</p>
+        <p className={styles.commentsCount}>{`${commentsCount}`} コメント</p>
       </div>
     </a>
   )

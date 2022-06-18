@@ -39,8 +39,8 @@ function TopPage() {
 
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
-          <h2>Threads</h2>
-          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>Create new thread</button>
+          <h2>スレッド</h2>
+          <button className={isOpenModal ? styles.buttonWhenPushed : ``} onClick={() => setIsOpenModal(true)}>新規スレッド</button>
         </div>
 
         {!isLoaded &&
