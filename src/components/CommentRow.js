@@ -10,7 +10,7 @@ function CommentRow(props) {
         <div className={styles.names}>
           <span className={styles.displayName}>{props.displayName}</span>
           <span className={styles.userId}>@{props.userId}</span>
-          <span className={styles.createdAt}>{dayjs(props.createdAt).format('YYYY/MM/DD HH:mm')}</span>
+          <span className={styles.createdAt}>{dayjs(props.createdAt).format('YYYY-MM-DD HH:mm')}</span>
         </div>
 
         <PopupMenu isThread={props.isThread} userId={props.userId}/>
