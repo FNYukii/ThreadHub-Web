@@ -1,17 +1,19 @@
 # Thread Hub for Web
 ## 概要
-Webブラウザで利用できる掲示板アプリです。
+Webブラウザで利用できる掲示板アプリです。  
 ユーザーがスレッドを作成し、他のユーザーがそれにコメントを追加していく仕様です。
+匿名掲示板となっており、アカウント登録不要で利用することができます。
 
 ## 特徴
-匿名掲示板となっており、アカウント登録不要で誰でも投稿できます。
+**React**を用いて開発し、データの管理には**Firebase Cloud Firestore**を利用しています。
+コメントの投稿者のIDを生成するために、**Firebase Authentication**も利用しています。
 
-## モジュール
-- react
-- react-router-dom
-- react-icons
-- dayjs
-- firebase
+## 使用したnpmモジュール
+- `react`
+- `react-router-dom`
+- `react-icons`
+- `dayjs`
+- `firebase`
 
 ## スクリーンショット
 <img width="1440" alt="スクリーンショット 2022-06-19 19 28 24" src="https://user-images.githubusercontent.com/65577595/174476647-e5c38de1-7b2f-4980-8c3b-02f5430b2a57.png">
