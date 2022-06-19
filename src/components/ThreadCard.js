@@ -3,6 +3,7 @@ import styles from '../styles/threadCard.module.css'
 import { useEffect, useState } from 'react'
 import { collection, getDocs, where, query, orderBy, limit } from 'firebase/firestore'
 import db from '../utilities/Firebase'
+import ThreadPopupMenu from './ThreadPopupMenu'
 
 function ThreadCard(props) {
 
@@ -28,11 +29,12 @@ function ThreadCard(props) {
   }, [])
 
   return (
-    <a href={`/threads/${props.document.id}`} className={styles.cardAnchor}>
+    <a className={styles.cardAnchor}>
       <div className={styles.card}>
         <p className={styles.title}>{props.document.data().title}</p>
         <p className={styles.firstCommentText}>{firstCommentText}</p>
         <p className={styles.commentsCount}>{`${commentsCount}`} コメント</p>
+        <ThreadPopupMenu thread={props.document}/>
       </div>
     </a>
   )

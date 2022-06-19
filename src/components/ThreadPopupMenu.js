@@ -1,11 +1,11 @@
-import styles from '../styles/commentPopupMenu.module.css'
+import styles from '../styles/threadPopupMenu.module.css'
 import { useEffect, useState } from 'react'
 import { FaEllipsisH } from 'react-icons/fa'
 import { getAuth } from "firebase/auth"
 import { doc, deleteDoc } from "firebase/firestore"
 import db from '../utilities/Firebase'
 
-function CommentPopupMenu(props) {
+function ThreadPopupMenu(props) {
 
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [loginUserId, setLoginUserId] = useState('')
@@ -19,12 +19,12 @@ function CommentPopupMenu(props) {
     }
   }, [])
 
-  const onClickDeleteComment = async() => {
+  const onClickDeleteThread = async() => {
     setIsOpenMenu(false)
-    await deleteDoc(doc(db, "comments", props.comment.id))
+    await deleteDoc(doc(db, "threads", props.thread.id))
   }
 
-  const onClickReportComment = () => {
+  const onClickReportThread = () => {
     setIsOpenMenu(false)
   }
 
@@ -36,15 +36,15 @@ function CommentPopupMenu(props) {
 
       {isOpenMenu &&
         <div className={styles.menu}>          
-          {loginUserId === props.comment.data().userId &&
-            <button className={styles.deleteButton} onClick={onClickDeleteComment}>コメントを削除</button>
+          {loginUserId === props.thread.data().userId &&
+            <button className={styles.deleteButton} onClick={onClickDeleteThread}>スレッドを削除</button>
           }
 
-          <button onClick={onClickReportComment}>コメントを報告</button>
+          <button onClick={onClickReportThread}>スレッドを報告</button>
         </div>
       }
     </div>
   )
 }
 
-export default CommentPopupMenu
+export default ThreadPopupMenu
