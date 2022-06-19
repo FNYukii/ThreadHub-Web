@@ -1,9 +1,9 @@
-import styles from '../styles/popupMenu.module.css'
+import styles from '../styles/commentPopupMenu.module.css'
 import { useEffect, useState } from 'react'
 import { FaEllipsisH } from 'react-icons/fa'
 import { getAuth } from "firebase/auth"
 
-function PopupMenu(props) {
+function CommentPopupMenu(props) {
 
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [loginUserId, setLoginUserId] = useState('')
@@ -45,4 +45,4 @@ function PopupMenu(props) {
   )
 }
 
-export default PopupMenu
+export default CommentPopupMenu
