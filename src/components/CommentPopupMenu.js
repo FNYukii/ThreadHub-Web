@@ -35,10 +35,10 @@ function CommentPopupMenu(props) {
       {isOpenMenu &&
         <div className={styles.menu}>          
           {loginUserId === props.userId &&
-            <button className={styles.deleteButton} onClick={onClickDeleteComment}>Delete this comment</button>
+            <button className={styles.deleteButton} onClick={onClickDeleteComment}>コメントを削除</button>
           }
 
-          <button onClick={onClickReport}>Report</button>
+          <button onClick={onClickReport}>コメントを報告</button>
         </div>
       }
     </div>
