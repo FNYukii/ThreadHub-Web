@@ -35,7 +35,7 @@ function CommentPopupMenu(props) {
       {isOpenMenu &&
         <div className={styles.menu}>          
           {loginUserId === props.userId &&
-            <button onClick={onClickDeleteComment}>Delete this comment</button>
+            <button className={styles.deleteButton} onClick={onClickDeleteComment}>Delete this comment</button>
           }
 
           <button onClick={onClickReport}>Report</button>
