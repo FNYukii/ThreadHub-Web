@@ -73,7 +73,7 @@ function ThreadPage() {
             <div>
               {
                 comments.map(comment => (
-                  <CommentRow key={comment.id} displayName={comment.data().displayName} userId={comment.data().userId} createdAt={new Date(comment.data({serverTimestamps:"estimate"}).createdAt.toDate())} text={comment.data().text}/>
+                  <CommentRow key={comment.id} comment={comment}/>
                 ))
               }
             </div>

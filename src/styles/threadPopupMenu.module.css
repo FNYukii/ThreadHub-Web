@@ -25,6 +25,7 @@
 }
 
 .menu button {
+  display: block;
   white-space: nowrap;
   margin-top: 16px;
   background-color: transparent;
