@@ -1,9 +1,9 @@
-import styles from '../styles/popupMenu.module.css'
+import styles from '../styles/commentPopupMenu.module.css'
 import { useEffect, useState } from 'react'
 import { FaEllipsisH } from 'react-icons/fa'
 import { getAuth } from "firebase/auth"
 
-function PopupMenu(props) {
+function CommentPopupMenu(props) {
 
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [loginUserId, setLoginUserId] = useState('')
@@ -16,11 +16,6 @@ function PopupMenu(props) {
       setLoginUserId(user.uid)
     }
   }, [])
-
-  const onClickDeleteThread = () => {
-    setIsOpenMenu(false)
-    // TODO: Delete my thread
-  }
 
   const onClickDeleteComment = () => {
     setIsOpenMenu(false)
@@ -38,16 +33,10 @@ function PopupMenu(props) {
       </button>
 
       {isOpenMenu &&
-        <div className={styles.menu}>
-
-          {props.isThread && loginUserId === props.userId &&
-            <button onClick={onClickDeleteThread}>Delete this thread</button>
+        <div className={styles.menu}>          
+          {loginUserId === props.userId &&
+            <button className={styles.deleteButton} onClick={onClickDeleteComment}>Delete this comment</button>
           }
-          
-          {!props.isThread && loginUserId === props.userId &&
-            <button onClick={onClickDeleteComment}>Delete this comment</button>
-          }
-
 
           <button onClick={onClickReport}>Report</button>
         </div>
@@ -56,4 +45,4 @@ function PopupMenu(props) {
   )
 }
 
-export default PopupMenu
+export default CommentPopupMenu

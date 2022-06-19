@@ -1,6 +1,6 @@
 import styles from '../styles/commentRow.module.css'
 import dayjs from 'dayjs'
-import PopupMenu from './PopupMenu'
+import CommentPopupMenu from './CommentPopupMenu'
 
 function CommentRow(props) {
 
@@ -13,7 +13,7 @@ function CommentRow(props) {
           <span className={styles.createdAt}>{dayjs(props.createdAt).format('YYYY-MM-DD HH:mm')}</span>
         </div>
 
-        <PopupMenu isThread={props.isThread} userId={props.userId}/>
+        <CommentPopupMenu userId={props.userId}/>
       </div>
       <p>{props.text}</p>
     </div>

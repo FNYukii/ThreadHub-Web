@@ -33,6 +33,10 @@
   cursor: pointer;
 }
 
+.deleteButton {
+  color: red;
+}
+
 .menu button:hover {
   opacity: 0.7;
 }
