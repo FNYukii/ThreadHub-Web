@@ -31,7 +31,7 @@ function ThreadCard(props) {
     <a href={`/threads/${props.document.id}`} className={styles.cardAnchor}>
       <div className={styles.card}>
         <p className={styles.title}>{props.document.data().title}</p>
-        <p className={styles.detail}>{firstCommentText}</p>
+        <p className={styles.firstCommentText}>{firstCommentText}</p>
         <p className={styles.commentsCount}>{`${commentsCount}`} コメント</p>
       </div>
     </a>
