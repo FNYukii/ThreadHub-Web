@@ -8,14 +8,14 @@ function CommentRow(props) {
     <div className={styles.commentRow}>
       <div className={styles.nameBar}>
         <div className={styles.names}>
-          <span className={styles.displayName}>{props.displayName}</span>
-          <span className={styles.userId}>@{props.userId}</span>
-          <span className={styles.createdAt}>{dayjs(props.createdAt).format('YYYY-MM-DD HH:mm')}</span>
+          <span className={styles.displayName}>{props.comment.data().displayName}</span>
+          <span className={styles.userId}>@{props.comment.data().userId}</span>
+          <span className={styles.createdAt}>{dayjs(new Date(props.comment.data({serverTimestamps:"estimate"}).createdAt.toDate())).format('YYYY-MM-DD HH:mm')}</span>
         </div>
 
-        <CommentPopupMenu userId={props.userId}/>
+        <CommentPopupMenu comment={props.comment}/>
       </div>
-      <p>{props.text}</p>
+      <p>{props.comment.data().text}</p>
     </div>
   )
 }

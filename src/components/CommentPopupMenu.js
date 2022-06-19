@@ -2,6 +2,8 @@ import styles from '../styles/commentPopupMenu.module.css'
 import { useEffect, useState } from 'react'
 import { FaEllipsisH } from 'react-icons/fa'
 import { getAuth } from "firebase/auth"
+import { doc, deleteDoc } from "firebase/firestore"
+import db from '../utilities/Firebase'
 
 function CommentPopupMenu(props) {
 
@@ -17,9 +19,9 @@ function CommentPopupMenu(props) {
     }
   }, [])
 
-  const onClickDeleteComment = () => {
+  const onClickDeleteComment = async() => {
     setIsOpenMenu(false)
-    // TODO: Delete my comment
+    await deleteDoc(doc(db, "comments", props.comment.id))
   }
 
   const onClickReport = () => {
@@ -34,7 +36,7 @@ function CommentPopupMenu(props) {
 
       {isOpenMenu &&
         <div className={styles.menu}>          
-          {loginUserId === props.userId &&
+          {loginUserId === props.comment.data().userId &&
             <button className={styles.deleteButton} onClick={onClickDeleteComment}>コメントを削除</button>
           }
 
