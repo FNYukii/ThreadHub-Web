@@ -17,11 +17,6 @@ function PopupMenu(props) {
     }
   }, [])
 
-  const onClickDeleteThread = () => {
-    setIsOpenMenu(false)
-    // TODO: Delete my thread
-  }
-
   const onClickDeleteComment = () => {
     setIsOpenMenu(false)
     // TODO: Delete my comment
@@ -38,16 +33,10 @@ function PopupMenu(props) {
       </button>
 
       {isOpenMenu &&
-        <div className={styles.menu}>
-
-          {props.isThread && loginUserId === props.userId &&
-            <button onClick={onClickDeleteThread}>Delete this thread</button>
-          }
-          
-          {!props.isThread && loginUserId === props.userId &&
+        <div className={styles.menu}>          
+          {loginUserId === props.userId &&
             <button onClick={onClickDeleteComment}>Delete this comment</button>
           }
-
 
           <button onClick={onClickReport}>Report</button>
         </div>
