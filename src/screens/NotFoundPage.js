@@ -5,6 +5,7 @@ function NotFoundPage() {
     <main>
       <div className={styles.largeContainer}>
         <h2>Page not found.</h2>
+        <p>ページが見つかりません。</p>
       </div>
     </main>
   )
