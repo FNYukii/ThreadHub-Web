@@ -4,7 +4,7 @@ function NotFoundPage() {
   return (
     <main>
       <div className={styles.largeContainer}>
-        <h2>NotFound</h2>
+        <h2>Page not found.</h2>
       </div>
     </main>
   )
