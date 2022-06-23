@@ -2,6 +2,7 @@ import styles from '../styles/threadPage.module.css'
 
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { collection, query, onSnapshot, where, doc, getDoc, orderBy } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 
@@ -20,6 +21,7 @@ function ThreadPage() {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
   document.title = threadTitle
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -50,6 +52,7 @@ function ThreadPage() {
       setThreadTitle(docSnap.data().title)
     } else {
       console.log('Thread not found.')
+      navigate('/notFound')
     }
     setIsLoaded(true)
   }
