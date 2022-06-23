@@ -1,7 +1,9 @@
+import styles from '../styles/notFoundPage.module.css'
+
 function NotFoundPage() {
   return (
     <main>
-      <div className="large-container">
+      <div className={styles.largeContainer}>
         <h2>NotFound</h2>
       </div>
     </main>
