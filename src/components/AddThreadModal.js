@@ -58,7 +58,7 @@ function AddThreadModal(props) {
         </button>
 
         <form>
-          <input placeholder="タイトル" required onChange={onInputTitle} value={title}/>
+          <input placeholder="スレッドタイトル" required onChange={onInputTitle} value={title}/>
         </form>
 
         <div className={styles.submitButtonContainer}>
