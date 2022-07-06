@@ -1,6 +1,9 @@
 .root {
   padding: 32px 0;
   background-color: #fff;
+
+  position: sticky;
+  top: 100vh;
 }
 
 .largeContainer {
