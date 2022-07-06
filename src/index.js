@@ -5,9 +5,9 @@ import { getAuth, signInAnonymously } from "firebase/auth";
 
 import './styles/index.css'
 
-import Top from './screens/TopPage'
-import NotFoundPage from './screens/NotFoundPage'
-import ThreadPage from './screens/ThreadPage'
+import Top from './pages/TopPage'
+import NotFoundPage from './pages/NotFoundPage'
+import ThreadPage from './pages/ThreadPage'
 import Header from './components/Header'
 
 const auth = getAuth();

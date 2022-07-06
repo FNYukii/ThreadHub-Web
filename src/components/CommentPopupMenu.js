@@ -24,25 +24,25 @@ function CommentPopupMenu(props) {
     await deleteDoc(doc(db, "comments", props.comment.id))
   }
 
-  const onClickReportComment = () => {
-    setIsOpenMenu(false)
-  }
-
   return (
     <div className={styles.root}>
-      <button className={styles.menuButton} onClick={() => setIsOpenMenu(!isOpenMenu)}>
-        <FaEllipsisH/>
-      </button>
 
-      {isOpenMenu &&
-        <div className={styles.menu}>          
-          {loginUserId === props.comment.data().userId &&
-            <button className={styles.deleteButton} onClick={onClickDeleteComment}>コメントを削除</button>
+      {loginUserId === props.comment.data().userId &&
+        <div>
+
+          <button className={styles.menuButton} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+            <FaEllipsisH/>
+          </button>
+
+          {isOpenMenu &&
+            <div className={styles.menu}>          
+              <button className={styles.deleteButton} onClick={onClickDeleteComment}>コメントを削除</button>
+            </div>
           }
 
-          <button onClick={onClickReportComment}>コメントを報告</button>
         </div>
       }
+
     </div>
   )
 }

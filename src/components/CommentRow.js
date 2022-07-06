@@ -15,6 +15,7 @@ function CommentRow(props) {
 
         <CommentPopupMenu comment={props.comment}/>
       </div>
+      
       <p>{props.comment.data().text}</p>
     </div>
   )

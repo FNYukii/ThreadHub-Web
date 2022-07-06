@@ -24,23 +24,22 @@ function ThreadPopupMenu(props) {
     await deleteDoc(doc(db, "threads", props.thread.id))
   }
 
-  const onClickReportThread = () => {
-    setIsOpenMenu(false)
-  }
-
   return (
     <div className={styles.root}>
-      <button className={styles.menuButton} onClick={() => setIsOpenMenu(!isOpenMenu)}>
-        <FaEllipsisH/>
-      </button>
+      {loginUserId === props.thread.data().userId &&
+        <div>
 
-      {isOpenMenu &&
-        <div className={styles.menu}>          
-          {loginUserId === props.thread.data().userId &&
-            <button className={styles.deleteButton} onClick={onClickDeleteThread}>スレッドを削除</button>
+          <button className={styles.menuButton} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+            <FaEllipsisH/>
+          </button>
+
+          {isOpenMenu &&
+            <div className={styles.menu}>          
+              
+              <button className={styles.deleteButton} onClick={onClickDeleteThread}>スレッドを削除</button>
+            </div>
           }
 
-          <button onClick={onClickReportThread}>スレッドを報告</button>
         </div>
       }
     </div>
