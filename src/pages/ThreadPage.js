@@ -71,7 +71,11 @@ function ThreadPage() {
             <img className={styles.progressView} src={progressView} alt=''/>
           }
 
-          {isLoaded &&
+          {isLoaded && comments.length === 0 &&
+            <p className={styles.noComment}>このスレッドにはまだコメントがありません。新しいコメントを投稿しましょう。</p>
+          }
+
+          {isLoaded && comments.length !== 0 &&
             <div>
               {
                 comments.map(comment => (
