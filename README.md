@@ -16,7 +16,8 @@ Webブラウザで利用できる掲示板アプリです。
 - `firebase`
 
 ## スクリーンショット
-<img width="1440" alt="スクリーンショット 2022-07-07 2 16 16" src="https://user-images.githubusercontent.com/65577595/177607236-06a34537-3742-456a-964d-49e739e6f336.png">
-<img width="1440" alt="スクリーンショット 2022-07-07 2 16 35" src="https://user-images.githubusercontent.com/65577595/177607248-3af7aa83-3015-4f58-bcb2-349f314aa0b6.png">
-<img width="1440" alt="スクリーンショット 2022-07-07 2 16 58" src="https://user-images.githubusercontent.com/65577595/177607267-d79b9227-dd46-4fc7-ac56-7468e9033adf.png">
-<img width="1440" alt="スクリーンショット 2022-07-07 2 17 08" src="https://user-images.githubusercontent.com/65577595/177607294-8860c333-66c2-4773-9836-4fcd3129684a.png">
+<img width="1440" alt="スクリーンショット 2022-07-07 2 23 04" src="https://user-images.githubusercontent.com/65577595/177608192-ffc18763-31cc-4aa8-ae71-ae63eaba87cd.png">
+<img width="1440" alt="スクリーンショット 2022-07-07 2 23 10" src="https://user-images.githubusercontent.com/65577595/177608242-33ffe6e8-dbcd-46e3-bb60-e968ecefff0d.png">
+<img width="1440" alt="スクリーンショット 2022-07-07 2 23 19" src="https://user-images.githubusercontent.com/65577595/177608261-00396924-6780-4f52-80a3-1fc767ffdb58.png">
+<img width="1440" alt="スクリーンショット 2022-07-07 2 23 26" src="https://user-images.githubusercontent.com/65577595/177608276-8703b1d9-26bd-49a7-b9ac-b5adf88f0748.png">
+
