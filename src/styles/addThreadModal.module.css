@@ -9,6 +9,8 @@
   width: 100%;
   height: 100vh;
   background-color: #000a;
+
+  z-index: 1;
 }
 
 .modal {
@@ -22,6 +24,8 @@
   padding: 32px;
   background-color: #fff;
   border-radius: 16px;
+
+  z-index: 2;
 }
 
 .modal .timesButton {
