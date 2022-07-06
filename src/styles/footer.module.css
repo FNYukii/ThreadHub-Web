@@ -22,3 +22,22 @@
   text-align: center;
   margin-top: 32px;
 }
+
+@media (max-width: 1132px) {
+  .largeContainer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .largeContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .root {
+    text-align: center;
+  }
+}
