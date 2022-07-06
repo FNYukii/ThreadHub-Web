@@ -35,7 +35,6 @@ function TopPage() {
   
   return (
     <main className={styles.root}>
-      <AddThreadModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)}/>
 
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
@@ -62,6 +61,8 @@ function TopPage() {
         </div>
       
       </div>
+
+      <AddThreadModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)}/>
     </main>
   )
 }
