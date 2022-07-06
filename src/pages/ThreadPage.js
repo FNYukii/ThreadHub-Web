@@ -59,7 +59,6 @@ function ThreadPage() {
 
   return (
     <main className={styles.root}>
-      <AddCommentModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)} threadId={threadId}/>
 
       <div className={styles.largeContainer}>
         <div className={styles.titleBar}>
@@ -84,6 +83,8 @@ function ThreadPage() {
         </div>
         
       </div>
+
+      <AddCommentModal isOpenModal={isOpenModal} close={() => setIsOpenModal(false)} threadId={threadId}/>
     </main>
   )
 }
