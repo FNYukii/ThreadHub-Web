@@ -33,10 +33,13 @@ function ThreadCard(props) {
     <div className={styles.root}>
         <a href={`/threads/${props.document.id}`}> </a>
 
-        <p className={styles.title}>{props.document.data().title}</p>
+        <div className={styles.titleBar}>
+          <p className={styles.title}>{props.document.data().title}</p>
+          <ThreadPopupMenu thread={props.document} className={styles.ellipsis}/>
+        </div>
+
         <p className={styles.firstCommentText}>{firstCommentText}</p>
         <p className={styles.commentsCount}>{`${commentsCount}`} コメント</p>
-        <ThreadPopupMenu thread={props.document}/>
       </div>
   )
 }

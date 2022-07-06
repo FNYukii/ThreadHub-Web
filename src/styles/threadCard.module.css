@@ -22,7 +22,12 @@
   height: 100%;
 }
 
-.title {
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleBar .title {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
