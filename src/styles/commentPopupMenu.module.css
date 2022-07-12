@@ -5,13 +5,16 @@
 .menuButton {
   background-color: transparent;  
   border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   color: #aaa;
   padding: 4px;
   cursor: pointer;
 }
 
 .menuButton:hover {
-  opacity: 0.8;
+  background-color: #aaa3;
 }
 
 .menu {
