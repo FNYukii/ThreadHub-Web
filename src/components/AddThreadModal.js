@@ -1,7 +1,7 @@
 import styles from '../styles/addThreadModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
-import React, { useState } from 'react'
+import React, { useEffect, useCallback, useState } from "react";
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import db from '../utilities/Firebase'
 import { getAuth } from "firebase/auth"
@@ -48,6 +48,18 @@ function AddThreadModal(props) {
     setTitle('')
     props.close()
   }
+
+  const keyboardHandler = useCallback((event) => {
+    if (event.keyCode === 27) {
+      closeModal()
+    }
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyboardHandler, false);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className={props.isOpenModal ? '' : styles.invisible}>
