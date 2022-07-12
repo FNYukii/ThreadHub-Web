@@ -1,9 +1,13 @@
 .root {
   position: relative;
+  margin-top: 18px;
 }
 
 .menuButton {
-  background-color: transparent;  
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   border: none;
   color: #aaa;
   padding: 4px;
@@ -11,7 +15,7 @@
 }
 
 .menuButton:hover {
-  opacity: 0.5;
+  background-color: #aaa3;
 }
 
 .menu {
