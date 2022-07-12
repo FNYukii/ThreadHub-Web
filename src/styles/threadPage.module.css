@@ -26,6 +26,7 @@
   cursor: pointer;
   font-size: medium;
   color: #0f83fd;
+  padding: 4px;
 }
 
 .titleBar button:hover {
