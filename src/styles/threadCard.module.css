@@ -10,10 +10,6 @@
   position: relative;
 }
 
-.root:hover {
-  opacity: 0.85;
-}
-
 .root a {
   position: absolute;
   top: 0;
