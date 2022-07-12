@@ -1,6 +1,6 @@
 .root {
   width: 32%;
-  height: 150px;
+  height: 170px;
   margin-top: 16px;
   padding: 0 24px;
   
@@ -33,7 +33,7 @@
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  -webkit-line-clamp: 2;
   font-weight: bold;
 }
 
