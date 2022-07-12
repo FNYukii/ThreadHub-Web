@@ -28,13 +28,9 @@ function ThreadPopupMenu(props) {
   return (
     <div className={styles.root}>
       {loginUserId === props.thread.data().userId &&
-        <div>
-
-          <Menu menuButton={<MenuButton className={styles.menuButton}><FaEllipsisH/></MenuButton>} direction='left'>
-            <MenuItem onClick={onClickDeleteThread}>スレッドを削除</MenuItem>
-          </Menu>
-
-        </div>
+        <Menu menuButton={<MenuButton className={styles.menuButton}><FaEllipsisH/></MenuButton>} direction='left'>
+          <MenuItem onClick={onClickDeleteThread}>スレッドを削除</MenuItem>
+        </Menu>
       }
     </div>
   )

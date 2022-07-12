@@ -29,13 +29,9 @@ function CommentPopupMenu(props) {
     <div className={styles.root}>
 
       {loginUserId === props.comment.data().userId &&
-        <div>
-
-          <Menu menuButton={<MenuButton className={styles.menuButton}><FaEllipsisH/></MenuButton>} direction='left'>
-            <MenuItem onClick={onClickDeleteComment}>コメントを削除</MenuItem>
-          </Menu>
-
-        </div>
+        <Menu menuButton={<MenuButton className={styles.menuButton}><FaEllipsisH/></MenuButton>} direction='left'>
+          <MenuItem onClick={onClickDeleteComment}>コメントを削除</MenuItem>
+        </Menu>
       }
 
     </div>
