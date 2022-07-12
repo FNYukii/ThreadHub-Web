@@ -24,12 +24,23 @@ function AddCommentModal(props) {
   }
 
   const createComment = () => {
+
+    if (displayName === '') {
+      alert('Please enter display name.')
+      return
+    }
+
     if (text === '') {
       alert('Please enter text.')
       return
     }
 
-    if (text.length > 2000) {
+    if (text.length > 20) {
+      alert('Too many charactors on display name.')
+      return
+    }
+
+    if (text.length > 200) {
       alert('Too many charactors on text.')
       return
     }

@@ -19,7 +19,7 @@ function AddThreadModal(props) {
       return
     }
 
-    if (title.length > 200) {
+    if (title.length > 50) {
       alert('Too many charactors on title.')
       return
     }
