@@ -8,6 +8,7 @@
 }
 
 .names {
+  padding-top: 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
