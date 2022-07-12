@@ -5,12 +5,11 @@ import { getAuth } from "firebase/auth"
 import { doc, deleteDoc } from "firebase/firestore"
 import db from '../utilities/Firebase'
 
-import { Menu, MenuItem, MenuButton, SubMenu } from '@szhsin/react-menu';
+import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 
 function ThreadPopupMenu(props) {
 
-  const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [loginUserId, setLoginUserId] = useState('')
 
   useEffect(() => {
@@ -23,7 +22,6 @@ function ThreadPopupMenu(props) {
   }, [])
 
   const onClickDeleteThread = async() => {
-    setIsOpenMenu(false)
     await deleteDoc(doc(db, "threads", props.thread.id))
   }
 
