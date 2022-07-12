@@ -36,17 +36,6 @@ function ThreadPopupMenu(props) {
             <MenuItem onClick={onClickDeleteThread}>スレッドを削除</MenuItem>
           </Menu>
 
-          {/* <button className={styles.menuButton} onClick={() => setIsOpenMenu(!isOpenMenu)}>
-            <FaEllipsisH/>
-          </button>
-
-          {isOpenMenu &&
-            <div className={styles.menu}>          
-              
-              <button className={styles.deleteButton} onClick={onClickDeleteThread}>スレッドを削除</button>
-            </div>
-          } */}
-
         </div>
       }
     </div>

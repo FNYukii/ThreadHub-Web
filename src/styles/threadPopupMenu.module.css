@@ -11,7 +11,7 @@
 }
 
 .menuButton:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .menu {
@@ -22,22 +22,4 @@
   padding: 0 16px 16px;
   box-shadow: 0px 0px 4px #ccc;
   z-index: 1;
-}
-
-.menu button {
-  display: block;
-  white-space: nowrap;
-  margin-top: 16px;
-  background-color: transparent;
-  border: none;
-  font-size: medium;
-  cursor: pointer;
-}
-
-.deleteButton {
-  color: red;
-}
-
-.menu button:hover {
-  opacity: 0.5;
 }
