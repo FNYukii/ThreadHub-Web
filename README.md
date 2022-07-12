@@ -13,6 +13,7 @@ Webブラウザで利用できる掲示板アプリです。
 - `react-router-dom`
 - `react-icons`
 - `dayjs`
+- `@szhsin/react-menu`
 - `firebase`
 
 ## スクリーンショット
