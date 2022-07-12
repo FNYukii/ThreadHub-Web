@@ -1,7 +1,7 @@
 import styles from '../styles/addCommentModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useCallback, useState } from "react";
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import db from '../utilities/Firebase'
 import { getAuth } from "firebase/auth"
@@ -62,6 +62,18 @@ function AddCommentModal(props) {
     setText('')
     props.close()
   }
+
+  const keyboardHandler = useCallback((event) => {
+    if (event.keyCode === 27) {
+      closeModal()
+    }
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyboardHandler, false);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className={props.isOpenModal ? `` : styles.invisible}>
