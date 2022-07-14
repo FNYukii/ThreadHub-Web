@@ -1,4 +1,4 @@
-import styles from '../styles/invisibleCard.module.css'
+import styles from '../styles/InvisibleCard.module.css'
 
 function InvisibleCard() {
   return (

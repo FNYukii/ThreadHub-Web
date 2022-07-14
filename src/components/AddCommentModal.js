@@ -1,4 +1,4 @@
-import styles from '../styles/addCommentModal.module.css'
+import styles from '../styles/AddCommentModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useEffect, useCallback, useState } from "react";

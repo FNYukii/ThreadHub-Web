@@ -1,4 +1,4 @@
-import styles from '../styles/addThreadModal.module.css'
+import styles from '../styles/AddThreadModal.module.css'
 
 import { FaTimes } from 'react-icons/fa'
 import React, { useEffect, useCallback, useState } from "react";

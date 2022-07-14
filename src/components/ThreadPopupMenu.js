@@ -1,4 +1,4 @@
-import styles from '../styles/threadPopupMenu.module.css'
+import styles from '../styles/ThreadPopupMenu.module.css'
 import { useEffect, useState } from 'react'
 import { FaEllipsisH } from 'react-icons/fa'
 import { getAuth } from "firebase/auth"

@@ -1,4 +1,4 @@
-import styles from '../styles/topPage.module.css'
+import styles from '../styles/TopScreen.module.css'
 
 import React, { useEffect, useState } from 'react'
 import { collection, query, onSnapshot, orderBy } from 'firebase/firestore'
@@ -9,7 +9,7 @@ import AddThreadModal from '../components/AddThreadModal'
 import InvisibleCard from '../components/InvisibleCard'
 import progressView from '../images/progressView.svg'
 
-function TopPage() {
+function TopScreen() {
 
   const [documents, setDocuments] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
@@ -67,4 +67,4 @@ function TopPage() {
   )
 }
 
-export default TopPage
+export default TopScreen

@@ -1,6 +1,6 @@
-import styles from '../styles/notFoundPage.module.css'
+import styles from '../styles/NotFoundScreen.module.css'
 
-function NotFoundPage() {
+function NotFoundScreen() {
   return (
     <main>
       <div className={styles.largeContainer}>
@@ -11,4 +11,4 @@ function NotFoundPage() {
   )
 }
 
-export default NotFoundPage
+export default NotFoundScreen

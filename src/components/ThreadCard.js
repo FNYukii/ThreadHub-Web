@@ -1,4 +1,4 @@
-import styles from '../styles/threadCard.module.css'
+import styles from '../styles/ThreadCard.module.css'
 
 import { useEffect, useState } from 'react'
 import { collection, getDocs, where, query, orderBy, limit } from 'firebase/firestore'

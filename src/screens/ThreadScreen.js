@@ -1,4 +1,4 @@
-import styles from '../styles/threadPage.module.css'
+import styles from '../styles/ThreadScreen.module.css'
 
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
@@ -10,7 +10,7 @@ import CommentRow from '../components/CommentRow'
 import AddCommentModal from '../components/AddCommentModal'
 import progressView from '../images/progressView.svg'
 
-function ThreadPage() {
+function ThreadScreen() {
 
   let { threadId } = useParams()
 
@@ -93,4 +93,4 @@ function ThreadPage() {
   )
 }
 
-export default ThreadPage
+export default ThreadScreen

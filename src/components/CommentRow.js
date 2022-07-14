@@ -1,4 +1,4 @@
-import styles from '../styles/commentRow.module.css'
+import styles from '../styles/CommentRow.module.css'
 import dayjs from 'dayjs'
 import CommentPopupMenu from './CommentPopupMenu'
 
