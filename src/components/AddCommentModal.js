@@ -35,7 +35,7 @@ function AddCommentModal(props) {
       return
     }
 
-    if (text.length > 20) {
+    if (displayName.length > 20) {
       alert('Too many charactors on display name.')
       return
     }
