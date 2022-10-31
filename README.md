@@ -8,13 +8,10 @@ Webブラウザで利用できる掲示板アプリです。
 **React**を用いて開発し、データの管理には**Firebase Cloud Firestore**を利用しています。
 コメントの投稿者のIDを生成するために、**Firebase Authentication**も利用しています。
 
-## 使用したnpmモジュール
-- `react`
-- `react-router-dom`
-- `react-icons`
-- `dayjs`
-- `@szhsin/react-menu`
-- `firebase`
+## 主な使用技術
+- React
+- JavaScript
+- Firebase SDK 9
 
 ## スクリーンショット
 <img width="1440" alt="スクリーンショット 2022-07-07 2 23 04" src="https://user-images.githubusercontent.com/65577595/177608192-ffc18763-31cc-4aa8-ae71-ae63eaba87cd.png">
